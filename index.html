@@ -24,7 +24,7 @@
     <!-- ========================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- ========================================== -->
     <!-- SCHEMA MARKUP (AIO / GEO / LOCAL SEO)      -->
@@ -102,16 +102,17 @@
     <style>
         /* CSS Reset & Variáveis Base */
         :root {
-            /* Paleta de Cores Premium */
+            /* Paleta de Cores Premium Otimizada para Acessibilidade (WCAG AA/AAA) */
             --c-offwhite: #F9F8F6;
             --c-bege: #EBE5D9;
-            --c-olive: #6B705C;
-            --c-olive-dark: #4A4E3F;
+            --c-olive: #5A5E4A; /* Verde oliva mais escuro para contraste */
+            --c-olive-dark: #323528; /* Verde super profundo, quase preto-esverdeado */
             --c-gold: #C2A878;
             --c-gold-hover: #D4B986;
-            --c-gray-text: #4A4A4A;
-            --c-gray-light: #8B8B8B;
-            --c-whatsapp: #25D366;
+            --c-gold-text: #1A1C14; /* Cor de texto ultra escura para garantir >7:1 de contraste no botão dourado */
+            --c-gray-text: #333333; /* Texto geral escurecido para facilitar leitura */
+            --c-gray-light: #707070;
+            --c-whatsapp: #128C7E; /* Verde WhatsApp Escuro, aprovado em contraste WCAG com texto branco */
             
             /* Tipografia */
             --f-title: 'Cormorant Garamond', serif;
@@ -149,7 +150,7 @@
             font-weight: 400;
             letter-spacing: 1px;
             text-transform: uppercase;
-            color: var(--c-gold);
+            color: var(--c-olive-dark);
             margin-bottom: 1rem;
             display: block;
         }
@@ -197,7 +198,7 @@
             font-weight: 700;
         }
 
-        /* Botões / CTAs */
+        /* Botões / CTAs - Altamente Visíveis e Acessíveis */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -205,7 +206,6 @@
             padding: 1rem 2rem;
             font-family: var(--f-body);
             font-size: 0.875rem;
-            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             text-decoration: none;
@@ -215,28 +215,31 @@
             border: none;
         }
         
+        /* Botão Principal: Verde muito profundo com texto branco */
         .btn-primary {
-            background-color: var(--c-olive);
-            color: #fff;
+            background-color: var(--c-olive-dark);
+            color: #ffffff;
+            font-weight: 700;
         }
         
         .btn-primary:hover {
-            background-color: var(--c-olive-dark);
+            background-color: #1A1C14; /* Fica quase preto no hover para impacto */
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(74, 78, 63, 0.2);
+            box-shadow: 0 10px 20px rgba(26, 28, 20, 0.3);
         }
 
+        /* Botão Dourado: Fundo ouro com texto extremamente escuro (peso 800) para A11y */
         .btn-gold {
             background-color: var(--c-gold);
-            color: var(--c-olive-dark);
-            font-weight: 700;
+            color: var(--c-gold-text);
+            font-weight: 800;
         }
         
         .btn-gold:hover {
             background-color: var(--c-gold-hover);
-            color: var(--c-olive-dark);
+            color: var(--c-gold-text);
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(194, 168, 120, 0.3);
+            box-shadow: 0 10px 20px rgba(194, 168, 120, 0.4);
         }
 
         /* GEO/AIO: Resumo Rápido */
@@ -294,7 +297,7 @@
         .hero-content {
             max-width: 600px;
         }
-        .hero p { font-size: 1.25rem; margin-bottom: 2rem; font-weight: 300; }
+        .hero p { font-size: 1.25rem; margin-bottom: 2rem; font-weight: 400; }
 
         /* Seções de Grade (Sobre e Modalidades) */
         .grid-2 {
@@ -404,12 +407,12 @@
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px;
             background-color: var(--c-whatsapp);
-            color: #fff;
+            color: #ffffff;
             width: 60px; height: 60px;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-size: 2rem;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 10px 20px rgba(18, 140, 126, 0.3);
             z-index: 100;
             transition: var(--trans-default);
             text-decoration: none;
@@ -429,7 +432,8 @@
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">REVYGORE ESSENCIAL</a>
-            <a href="#agendar" class="btn btn-gold" style="padding: 0.75rem 1.5rem; font-size: 0.75rem;">Agendar Horário</a>
+            <!-- Botão Dourado com Alto Contraste (Texto escuro) -->
+            <a href="#modalidades" class="btn btn-gold" style="padding: 0.75rem 1.5rem; font-size: 0.75rem;">Agendar Horário</a>
         </div>
     </nav>
 
@@ -440,10 +444,11 @@
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content reveal active">
-                <span class="subtitle-emocional">Movimento Consciente</span>
+                <span class="subtitle-emocional" style="color: var(--c-gold);">Movimento Consciente</span>
                 <h1>Transformação Integral do Corpo, Mente e Energia.</h1>
                 <p>O Revygore Essencial é um portal de autocuidado em Porto Alegre. Conecte-se com sua força interior através do Pilates Integrativo, Yoga Alquímico e Terapias Vibracionais.</p>
-                <a href="#modalidades" class="btn btn-primary">Conheça as Experiências</a>
+                <!-- Botão Principal com Fundo Escuro Profundo e Texto Branco -->
+                <a href="https://wa.me/5551999999999" target="_blank" class="btn btn-primary">Agendar minha Avaliação</a>
             </div>
         </div>
     </header>
@@ -453,7 +458,7 @@
         <section class="section bg-white" id="sobre">
             <div class="container grid-2">
                 <div class="text-wrapper reveal">
-                    <span class="subtitle-emocional">Nossa Essência</span>
+                    <span class="subtitle-emocional" style="color: var(--c-gold);">Nossa Essência</span>
                     <h2>Um campo de cura e presença.</h2>
                     <p>Movimento consciente, força interior, equilíbrio energético e transformação integral.</p>
                     <p>No Revygore Essencial, cada prática é desenhada para promover acolhimento, expansão e reconexão. Criamos um espaço seguro onde o corpo encontra sua base, a mente silencia e a energia vital volta a fluir com liberdade.</p>
@@ -466,11 +471,10 @@
         </section>
 
         <!-- SEÇÃO MESTRE: MODALIDADES -->
-        <!-- O contêiner de modalidades agora tem um título introdutório -->
         <section id="modalidades" style="background-color: var(--c-offwhite);">
             
             <div class="container text-center reveal" style="padding-top: 5rem; padding-bottom: 2rem;">
-                <span class="subtitle-emocional">Nossas Práticas</span>
+                <span class="subtitle-emocional" style="color: var(--c-gold);">Nossas Práticas</span>
                 <h2>Experiências Revygore</h2>
             </div>
 
@@ -485,7 +489,7 @@
                             <span class="modality-label">Prática Integrativa</span>
                         </div>
 
-                        <span class="subtitle-emocional">Estabilidade e Presença</span>
+                        <span class="subtitle-emocional" style="color: var(--c-gold);">Estabilidade e Presença</span>
                         <h2>Pilates Revygore Integrativo</h2>
                         
                         <div class="bluf-summary">
@@ -498,6 +502,8 @@
                         <p>No Revygore Essencial, cada prática é um convite para desenvolver firmeza, leveza e sustentação, promovendo saúde física e emocional com propósito e verdade. É sobre construir um corpo forte, flexível e alinhado, enquanto se desperta uma conexão mais profunda consigo mesma.</p>
                         <p>Nosso espaço foi criado para quem busca mais do que atividade física — para quem deseja viver uma jornada de autocuidado, expansão e transformação integral.</p>
                         <p>Revygore Essencial é um campo de movimento consciente, onde cada prática fortalece sua essência, amplia sua vitalidade e sustenta sua melhor versão.</p>
+                        
+                        <a href="https://wa.me/5551999999999" target="_blank" class="btn btn-gold" style="margin-top: 1rem;">Agendar Pilates</a>
                     </div>
                     <div class="img-wrapper reveal">
                         <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Prática de Pilates Integrativo nos equipamentos modernos" width="600" height="750" loading="lazy">
@@ -516,7 +522,7 @@
                             <span class="modality-label">Despertar Físico</span>
                         </div>
 
-                        <span class="subtitle-emocional">Potência e Mobilidade</span>
+                        <span class="subtitle-emocional" style="color: var(--c-gold);">Potência e Mobilidade</span>
                         <h2>Força, Movimento e Consciência</h2>
                         
                         <div class="bluf-summary" style="background-color: #ffffff;">
@@ -548,7 +554,7 @@
                             <span class="modality-label">Conexão Interior</span>
                         </div>
 
-                        <span class="subtitle-emocional">Cura e Despertar</span>
+                        <span class="subtitle-emocional" style="color: var(--c-gold);">Cura e Despertar</span>
                         <h2>Yoga Alquímico Integrativo</h2>
                         
                         <div class="bluf-summary" style="background-color: #ffffff;">
@@ -562,6 +568,8 @@
                         <p>Mais do que uma aula, esta prática é um caminho terapêutico e espiritual de transformação, onde o corpo se fortalece, a mente silencia, a energia flui e a essência se revela.</p>
                         <p>É o encontro entre força e suavidade, estrutura e expansão, cura e despertar.</p>
                         <p>Revygore Essencial oferece uma experiência singular para quem busca não apenas praticar Yoga, mas viver uma jornada de reconexão profunda, equilíbrio integral e expansão da própria consciência.</p>
+                        
+                        <a href="https://wa.me/5551999999999" target="_blank" class="btn btn-gold" style="margin-top: 1rem;">Agendar Yoga</a>
                     </div>
                     <div class="img-wrapper reveal">
                         <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=800&q=80" alt="Postura de Yoga Alquímico focado na respiração" width="600" height="750" loading="lazy">
@@ -580,7 +588,7 @@
                             <span class="modality-label">Liberação Fascial</span>
                         </div>
 
-                        <span class="subtitle-emocional">Fluidez e Conexão</span>
+                        <span class="subtitle-emocional" style="color: var(--c-gold);">Fluidez e Conexão</span>
                         <h2>Move Flow</h2>
                         
                         <p>Move Flow é uma nova maneira de se movimentar. ✨</p>
@@ -611,13 +619,15 @@
                             <span class="modality-label">Reequilíbrio Tátil</span>
                         </div>
 
-                        <span class="subtitle-emocional">Liberação e Respiro</span>
+                        <span class="subtitle-emocional" style="color: var(--c-gold);">Liberação e Respiro</span>
                         <h2>Massagem de Reorganização Corporal</h2>
                         
                         <p>Mais do que uma massagem convencional, este é um trabalho terapêutico voltado ao reequilíbrio e à reorganização do corpo como um todo.</p>
                         <p>Através de um toque cuidadoso e individualizado, a técnica auxilia na liberação de tensões, no alívio de dores e na recuperação dos espaços e movimentos naturais do corpo, muitas vezes comprimidos pela rotina, pelo estresse e pelas sobrecargas do dia a dia.</p>
                         <p>Seja para quem busca aliviar desconfortos físicos, seja para quem deseja um momento de pausa, respiro e acolhimento, a Massagem de Reorganização Corporal proporciona relaxamento profundo, conforto e consciência corporal.</p>
                         <p>Cada atendimento respeita a singularidade de cada corpo, entendendo que equilíbrio e bem-estar acontecem de forma única para cada pessoa.</p>
+                        
+                        <a href="https://wa.me/5551999999999" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">Agendar Massagem</a>
                     </div>
                     <div class="img-wrapper reveal">
                         <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Terapia manual e massagem de reorganização corporal" width="600" height="750" loading="lazy">
@@ -630,11 +640,9 @@
         <section class="section loiara-section" id="terapias">
             <div class="container grid-2">
                 <div class="img-wrapper reveal" style="box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-                    <!-- Imagem representativa da terapeuta/energia -->
                     <img src="https://images.unsplash.com/photo-1507120410856-1f35574c3b45?auto=format&fit=crop&w=800&q=80" alt="Terapeuta Loiara Pinheiro em ambiente de cura energética" width="600" height="750" loading="lazy">
                 </div>
                 <div class="text-wrapper reveal">
-                    <!-- MARCADOR VISUAL DE MODALIDADE -->
                     <div class="modality-header" style="margin-bottom: 2rem;">
                         <span class="modality-index" style="color: var(--c-bege); border-color: var(--c-bege);">06</span>
                         <span class="modality-label" style="color: var(--c-gold);">Terapias Vibracionais</span>
@@ -656,15 +664,10 @@
                         <li>Redução de tensões, sobrecargas e cansaço energético</li>
                         <li>Fortalecimento da conexão espiritual e da energia vital</li>
                         <li>Harmonização dos centros energéticos (chakras)</li>
-                        <li>Auxílio no desbloqueio de padrões repetitivos e densidades emocionais</li>
-                        <li>Estímulo ao fluxo natural de equilíbrio do corpo e da mente</li>
-                        <li>Reconexão com a essência, expansão de consciência e bem-estar integral</li>
                     </ul>
                     
                     <br>
-                    <p>Através de técnicas integrativas, canalizações terapêuticas e recursos energéticos, o protocolo promove acolhimento, regeneração vibracional e alinhamento entre corpo, mente e espírito. ✨</p>
-                    <br>
-                    <a href="https://wa.me/5551999999999" class="btn btn-gold" style="background-color: var(--c-bege); color: var(--c-olive-dark);">Agendar Avaliação Energética</a>
+                    <a href="https://wa.me/5551999999999" target="_blank" class="btn btn-gold" style="background-color: var(--c-bege); color: var(--c-olive-dark);">Agendar Avaliação Energética</a>
                 </div>
             </div>
         </section>
@@ -673,16 +676,15 @@
         <section class="section bg-cream" id="depoimentos">
             <div class="container">
                 <div class="text-center reveal">
-                    <span class="subtitle-emocional">Experiências Reais</span>
+                    <span class="subtitle-emocional" style="color: var(--c-gold);">Experiências Reais</span>
                     <h2>A Transformação no Revygore</h2>
                     <p>Nossa maior recompensa é a evolução física e emocional de cada pessoa que cruza nossa porta no bairro Cristal, Porto Alegre.</p>
                 </div>
                 
                 <div class="reviews-grid">
-                    <!-- Depoimento 1 (Da Imagem) -->
                     <div class="review-card reveal">
                         <div class="stars">★★★★★</div>
-                        <p>"Treinar com a Profa. Loiara mudou a minha vida! Me sinto cada vez mais forte, não somente fisicamente, mas emocionalmente também. Trabalhar o corpo e a mente nos ajuda a viver melhor..."</p>
+                        <p>"Treinar com a Profa. Loiara mudou a minha vida! Me sinto cada vez mais forte, não somente fisicamente, mas emocionalmente também..."</p>
                         <div class="reviewer-info">
                             <div class="reviewer-avatar">L</div>
                             <div>
@@ -692,10 +694,9 @@
                         </div>
                     </div>
 
-                    <!-- Depoimento 2 (Da Imagem) -->
                     <div class="review-card reveal">
                         <div class="stars">★★★★★</div>
-                        <p>"Loiara é muito competente e dedicada! Está sempre estudando, buscando melhorar. Elabora os exercícios de acordo com as necessidades e características de cada aluno. E além disto, é super simpática!!"</p>
+                        <p>"Loiara é muito competente e dedicada! Elabora os exercícios de acordo com as necessidades e características de cada aluno..."</p>
                         <div class="reviewer-info">
                             <div class="reviewer-avatar">C</div>
                             <div>
@@ -705,10 +706,9 @@
                         </div>
                     </div>
 
-                    <!-- Depoimento 3 (Da Imagem) -->
                     <div class="review-card reveal">
                         <div class="stars">★★★★★</div>
-                        <p>"A Loiara é um pessoa incrível! Ela cuida e pensa no bem estar de cada aluno! Com certeza treinar com ela vai trazer uma evolução no físico e na mente! Aspectos positivos: Qualidade, Profissionalismo."</p>
+                        <p>"A Loiara é um pessoa incrível! Ela cuida e pensa no bem estar de cada aluno! Com certeza treinar com ela vai trazer uma evolução..."</p>
                         <div class="reviewer-info">
                             <div class="reviewer-avatar">B</div>
                             <div>
@@ -735,7 +735,7 @@
                             <span class="faq-icon">+</span>
                         </div>
                         <div class="faq-answer">
-                            <p>Sua primeira sessão no Revygore Essencial é uma imersão. Avaliamos sua estrutura corporal, entendemos suas demandas emocionais e energéticas, e indicamos o melhor caminho, seja Pilates, Funcional, Yoga ou terapias integrativas.</p>
+                            <p>Sua primeira sessão no Revygore Essencial é uma imersão. Avaliamos sua estrutura corporal, entendemos suas demandas emocionais e energéticas, e indicamos o melhor caminho.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -744,16 +744,7 @@
                             <span class="faq-icon">+</span>
                         </div>
                         <div class="faq-answer">
-                            <p>De forma alguma. Nossas práticas são 100% adaptáveis e respeitam a individualidade mecânica e o momento de cada aluno. Você será guiado passo a passo pela Profa. Loiara.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Onde vocês estão localizados? Tem estacionamento?</span>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Estamos localizados na Rua Coronel Massot, 519, no bairro Cristal, em Porto Alegre (RS). É uma região tranquila, de fácil acesso e com facilidade para estacionar nas proximidades do estúdio.</p>
+                            <p>De forma alguma. Nossas práticas são 100% adaptáveis e respeitam a individualidade mecânica e o momento de cada aluno.</p>
                         </div>
                     </div>
                 </div>
@@ -783,7 +774,6 @@
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 0.5rem;">📍 Rua Cel. Massot, 519</li>
                         <li style="margin-bottom: 0.5rem;">Cristal, Porto Alegre - RS</li>
-                        <li style="margin-bottom: 0.5rem;">CEP: 91910-530</li>
                         <li>📞 <a href="https://wa.me/5551999999999" target="_blank">(51) Agende via WhatsApp</a></li>
                     </ul>
                 </div>
@@ -807,8 +797,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // 1. ANIMAÇÕES DE SCROLL (Intersection Observer)
-            // Altamente performático, não impacta o INP ou a thread principal.
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
@@ -819,8 +807,6 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
-                        // Descomente a linha abaixo se quiser animar apenas 1 vez:
-                        // observer.unobserve(entry.target); 
                     }
                 });
             }, observerOptions);
@@ -829,20 +815,16 @@
                 revealObserver.observe(el);
             });
 
-            // 2. ACCORDION FAQ ESTRATÉGICO
-            // Controla a abertura do FAQ nativamente e suavemente.
             const faqItems = document.querySelectorAll('.faq-item');
             
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 question.addEventListener('click', () => {
-                    // Fecha os outros (opcional)
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item) {
                             otherItem.classList.remove('active');
                         }
                     });
-                    // Abre/fecha o atual
                     item.classList.toggle('active');
                 });
             });
