@@ -10,6 +10,7 @@
     <title>Revygore Essencial | Pilates, Yoga e Terapias em Porto Alegre</title>
     <meta name="description" content="Estúdio premium de Pilates, Yoga Alquímico, Treinamento Funcional e Terapias Energéticas no Cristal, Porto Alegre. Transforme seu corpo e mente com a Profa. Loiara.">
     <link rel="canonical" href="https://www.revygoreessencial.com.br/">
+    <!-- Controle Granular para Snippets e IA -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
     <!-- Open Graph / Social Media -->
@@ -174,7 +175,7 @@
         /* Cores de Fundo Premium para Diferenciação das Modalidades */
         .bg-white { background-color: #ffffff; }
         .bg-cream { background-color: #F7F5F0; }
-        .bg-sage-light { background-color: #F0F6F2; } /* Ajustado para conversar com o verde do logo */
+        .bg-sage-light { background-color: #F0F6F2; }
         .bg-sand-light { background-color: #FAF8F5; }
 
         /* Tabela Semântica AIO / RAG (Otimização para LLMs) */
@@ -249,7 +250,6 @@
             border: none;
         }
         
-        /* Botão Principal: Verde muito profundo com texto branco */
         .btn-primary {
             background-color: var(--c-olive-dark);
             color: #ffffff;
@@ -257,12 +257,11 @@
         }
         
         .btn-primary:hover {
-            background-color: #1A1C14; /* Fica quase preto no hover para impacto */
+            background-color: #1A1C14;
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(26, 28, 20, 0.3);
         }
 
-        /* Botão Brand (Cor do Logo): Fundo Verde Revygore com texto extremamente escuro para A11y */
         .btn-brand {
             background-color: var(--c-brand);
             color: var(--c-brand-text);
@@ -276,14 +275,15 @@
             box-shadow: 0 10px 20px rgba(129, 199, 161, 0.4);
         }
 
-        /* GEO/AIO: Resumo Rápido */
-        .bluf-summary {
-            background-color: rgba(129, 199, 161, 0.15); /* Fundo super suave com a cor do logo */
+        /* GEO/AIO: Parágrafo BLUF (Bottom Line Up Front) - Corrigido para <p> semântico */
+        p.bluf-summary {
+            background-color: rgba(129, 199, 161, 0.15);
             padding: 1.5rem;
             border-left: 4px solid var(--c-brand);
             margin-bottom: 2rem;
             border-radius: 0 var(--br-soft) var(--br-soft) 0;
             font-weight: 500;
+            color: var(--c-olive-dark);
         }
 
         /* ---------------------------------- */
@@ -297,7 +297,7 @@
             background: rgba(249, 248, 246, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 0.75rem 0; /* Espaçamento levemente reduzido para acomodar o logo redondo */
+            padding: 0.75rem 0;
             border-bottom: 1px solid rgba(129, 199, 161, 0.2);
         }
         .navbar .container {
@@ -311,12 +311,12 @@
             text-decoration: none;
         }
         .logo-img {
-            width: 65px; /* Tamanho exato para legibilidade em dispositivos móveis */
+            width: 65px;
             height: 65px;
-            border-radius: 50%; /* Deixa a imagem perfeitamente redonda */
+            border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border: 2px solid #ffffff; /* Borda premium para destacar do fundo */
+            border: 2px solid #ffffff;
             transition: transform 0.3s ease;
         }
         .logo-link:hover .logo-img {
@@ -329,7 +329,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 80px; /* offset navbar */
+            padding-top: 80px;
             overflow: hidden;
         }
         .hero-bg {
@@ -345,11 +345,11 @@
             z-index: -1;
         }
         .hero-content {
-            max-width: 600px;
+            max-width: 650px;
         }
         .hero p { font-size: 1.25rem; margin-bottom: 2rem; font-weight: 400; }
 
-        /* Seções de Grade (Sobre e Modalidades) */
+        /* Seções de Grade */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -445,18 +445,18 @@
         .faq-icon { transition: transform 0.3s ease; color: var(--c-brand-dark); }
         .faq-item.active .faq-icon { transform: rotate(45deg); }
 
-        /* Carrossel Nativo Premium (CSS Scroll Snap - Zero CLS, Alta Performance) */
+        /* Carrossel Nativo Premium */
         .carousel-section { position: relative; padding-bottom: 4rem; overflow: hidden; }
         .carousel-wrapper { position: relative; max-width: var(--container-w); margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; }
         .carousel-track {
             display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory;
             scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Oculta scrollbar Firefox */
+            scrollbar-width: none;
             padding-bottom: 1rem;
         }
-        .carousel-track::-webkit-scrollbar { display: none; } /* Oculta scrollbar Chrome/Safari */
+        .carousel-track::-webkit-scrollbar { display: none; }
         .carousel-slide {
-            flex: 0 0 calc(33.333% - 1rem); /* 3 cards no desktop */
+            flex: 0 0 calc(33.333% - 1rem);
             scroll-snap-align: start; border-radius: var(--br-soft); overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05); position: relative;
         }
@@ -477,10 +477,10 @@
         .carousel-btn.next { right: -10px; }
         
         @media (max-width: 900px) {
-            .carousel-slide { flex: 0 0 calc(50% - 0.75rem); } /* 2 cards no tablet */
+            .carousel-slide { flex: 0 0 calc(50% - 0.75rem); }
         }
         @media (max-width: 600px) {
-            .carousel-slide { flex: 0 0 100%; } /* 1 card no mobile */
+            .carousel-slide { flex: 0 0 100%; }
             .carousel-btn.prev { left: 5px; }
             .carousel-btn.next { right: 5px; }
         }
@@ -521,12 +521,12 @@
     <!-- NAVEGAÇÃO -->
     <nav class="navbar">
         <div class="container">
-            <!-- Logo em Imagem Redonda -->
-            <a href="#" class="logo-link" aria-label="Página Inicial Revygore Essencial">
+            <!-- Logo em Imagem Redonda (Link para a raiz seguindo AIO/GEO Local) -->
+            <a href="/" class="logo-link" aria-label="Página Inicial Revygore Essencial">
                 <img src="img/logo-revygore-essencial.webp" alt="Logo Revygore Essencial" class="logo-img" width="65" height="65">
             </a>
-            <!-- Botão Brand com a cor do Logo -->
-            <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar um horário no Revygore Essencial." target="_blank" class="btn btn-brand" style="padding: 0.75rem 1.5rem; font-size: 0.75rem;">Agendar Horário</a>
+            <!-- Botão Brand com a cor do Logo e noopener -->
+            <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar um horário no Revygore Essencial." target="_blank" rel="noopener noreferrer" class="btn btn-brand" style="padding: 0.75rem 1.5rem; font-size: 0.75rem;">Agendar Horário</a>
         </div>
     </nav>
 
@@ -538,9 +538,10 @@
         <div class="container">
             <div class="hero-content reveal active">
                 <span class="subtitle-emocional">Movimento Consciente</span>
-                <h1>Transformação Integral do Corpo, Mente e Energia.</h1>
-                <p>O Revygore Essencial é um portal de autocuidado em Porto Alegre. Conecte-se com sua força interior através do Pilates Integrativo, Yoga Alquímico e Terapias Vibracionais.</p>
-                <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar minha Avaliação no Revygore." target="_blank" class="btn btn-primary">Agendar minha Avaliação</a>
+                <!-- H1 com total alinhamento semântico com a tag Title (Diretriz 1.2) -->
+                <h1>Revygore Essencial: Pilates, Yoga e Terapias em Porto Alegre.</h1>
+                <p>O nosso estúdio é um portal de autocuidado dedicado à Transformação Integral do seu Corpo, Mente e Energia. Conecte-se com sua força interior através de práticas integrativas exclusivas.</p>
+                <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar minha Avaliação no Revygore." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agendar minha Avaliação</a>
             </div>
         </div>
     </header>
@@ -570,7 +571,7 @@
                 <h2>Experiências Revygore</h2>
             </div>
 
-            <!-- TABELA AIO -->
+            <!-- TABELA AIO (Estrutura Semântica para RAG - LLMs) -->
             <div class="container reveal">
                 <!-- Indicador visual (Aparece apenas no mobile) -->
                 <div class="swipe-hint">Deslize para o lado para ver mais &rarr;</div>
@@ -633,9 +634,10 @@
                         <span class="subtitle-emocional">Estabilidade e Presença</span>
                         <h2>Pilates Revygore Integrativo</h2>
                         
-                        <div class="bluf-summary">
+                        <!-- Diretriz BLUF AIO (Bottom Line Up Front) usando tag semântica <p> -->
+                        <p class="bluf-summary">
                             O Pilates Revygore é uma prática terapêutica e física que une fortalecimento muscular, correção postural e consciência respiratória, focada no bem-estar total do indivíduo.
-                        </div>
+                        </p>
 
                         <p>No Revygore Essencial, acreditamos que o movimento é mais do que exercício — é um caminho de reconexão, fortalecimento e transformação.</p>
                         <p>Nosso Pilates nasce de uma visão integrativa, onde corpo, mente e energia caminham juntos para restaurar equilíbrio, consciência e vitalidade. Cada prática é conduzida como uma experiência de presença, respeitando a individualidade de cada pessoa e fortalecendo não apenas músculos, mas também postura, confiança e estabilidade interior.</p>
@@ -644,7 +646,7 @@
                         <p>Nosso espaço foi criado para quem busca mais do que atividade física — para quem deseja viver uma jornada de autocuidado, expansão e transformação integral.</p>
                         <p>Revygore Essencial é um campo de movimento consciente, onde cada prática fortalece sua essência, amplia sua vitalidade e sustenta sua melhor versão.</p>
                         
-                        <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre as aulas de Pilates Integrativo." target="_blank" class="btn btn-brand" style="margin-top: 1rem;">Agendar Pilates</a>
+                        <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre as aulas de Pilates Integrativo." target="_blank" rel="noopener noreferrer" class="btn btn-brand" style="margin-top: 1rem;">Agendar Pilates</a>
                     </div>
                     <div class="img-wrapper reveal">
                         <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Prática de Pilates Integrativo nos equipamentos modernos" width="600" height="750" loading="lazy">
@@ -665,9 +667,9 @@
                         <span class="subtitle-emocional">Potência e Mobilidade</span>
                         <h2>Força, Movimento e Consciência</h2>
                         
-                        <div class="bluf-summary" style="background-color: #ffffff;">
+                        <p class="bluf-summary" style="background-color: #ffffff;">
                             Um método que integra força, funcionalidade e presença para despertar sua potência física, melhorar o equilíbrio metabólico e estruturar uma base protetora para as articulações.
-                        </div>
+                        </p>
 
                         <p>No Revygore Essencial, o Treinamento Funcional e de Força vai além do exercício físico — é um chamado para despertar potência, presença e conexão entre corpo, mente e energia.</p>
                         <p>Acreditamos que fortalecer o corpo é também fortalecer sua estrutura interior. Cada movimento ativa não apenas músculos, mas também sua consciência, sua disciplina e sua capacidade de sustentar a própria caminhada com mais firmeza e propósito.</p>
@@ -677,7 +679,7 @@
                         <p>Cada sessão é um convite para alinhar matéria e essência, despertar sua energia vital e construir uma base sólida para viver com mais consciência, liberdade e poder pessoal.</p>
                         <p>Revygore Essencial é onde força, movimento e espiritualidade se encontram para fortalecer sua existência em todos os níveis.</p>
                         
-                        <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre o Treinamento Funcional e de Força." target="_blank" class="btn btn-primary" style="margin-top: 1rem;">Agendar Funcional</a>
+                        <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre o Treinamento Funcional e de Força." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1rem;">Agendar Funcional</a>
                     </div>
                     <div class="img-wrapper reveal">
                         <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Aluna realizando treino de força e funcional" width="600" height="750" loading="lazy">
@@ -698,9 +700,9 @@
                         <span class="subtitle-emocional">Cura e Despertar</span>
                         <h2>Yoga Alquímico Integrativo</h2>
                         
-                        <div class="bluf-summary" style="background-color: #ffffff;">
+                        <p class="bluf-summary" style="background-color: #ffffff;">
                             A união da estrutura do Hatha Yoga, a expansão do Tantra Yoga e o acolhimento da Yoga Terapia para promover força, equilíbrio e cura emocional profunda.
-                        </div>
+                        </p>
 
                         <p>No Revygore Essencial, nasceu uma prática única: uma fusão profunda entre Tantra Yoga, Hatha Yoga e Yoga Terapia, desenvolvida para integrar corpo, energia, cura e consciência em uma jornada transformadora.</p>
                         <p>Este método foi criado para ir além das práticas convencionais, unindo a estrutura e estabilidade do Hatha Yoga, a expansão energética e sensorial do Tantra Yoga, e o acolhimento restaurador da Yoga Terapia. O resultado é uma experiência autoral, integrativa e profundamente consciente, que respeita sua individualidade enquanto promove fortalecimento, equilíbrio e reconexão interior.</p>
@@ -710,7 +712,7 @@
                         <p>É o encontro entre força e suavidade, estrutura e expansão, cura e despertar.</p>
                         <p>Revygore Essencial oferece uma experiência singular para quem busca não apenas praticar Yoga, mas viver uma jornada de reconexão profunda, equilíbrio integral e expansão da própria consciência.</p>
                         
-                        <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre o Yoga Alquímico." target="_blank" class="btn btn-brand" style="margin-top: 1rem;">Agendar Yoga</a>
+                        <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre o Yoga Alquímico." target="_blank" rel="noopener noreferrer" class="btn btn-brand" style="margin-top: 1rem;">Agendar Yoga</a>
                     </div>
                     <div class="img-wrapper reveal">
                         <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=800&q=80" alt="Postura de Yoga Alquímico focado na respiração" width="600" height="750" loading="lazy">
@@ -742,7 +744,7 @@
                         <p>Não é apenas um exercício. É uma experiência para sentir no corpo.</p>
                         <p>Experimente. Sinta para fazer sentido. 🌿</p>
                         
-                        <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre a prática de Move Flow." target="_blank" class="btn btn-brand" style="margin-top: 1rem;">Agendar Move Flow</a>
+                        <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre a prática de Move Flow." target="_blank" rel="noopener noreferrer" class="btn btn-brand" style="margin-top: 1rem;">Agendar Move Flow</a>
                     </div>
                     <div class="img-wrapper reveal">
                         <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=800&q=80" alt="Prática de Move Flow com bolinhas e soltura fascial" width="600" height="750" loading="lazy">
@@ -768,7 +770,7 @@
                         <p>Seja para quem busca aliviar desconfortos físicos, seja para quem deseja um momento de pausa, respiro e acolhimento, a Massagem de Reorganização Corporal proporciona relaxamento profundo, conforto e consciência corporal.</p>
                         <p>Cada atendimento respeita a singularidade de cada corpo, entendendo que equilíbrio e bem-estar acontecem de forma única para cada pessoa.</p>
                         
-                        <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar uma Massagem de Reorganização Corporal." target="_blank" class="btn btn-primary" style="margin-top: 1rem;">Agendar Massagem</a>
+                        <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar uma Massagem de Reorganização Corporal." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1rem;">Agendar Massagem</a>
                     </div>
                     <div class="img-wrapper reveal">
                         <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Terapia manual e massagem de reorganização corporal" width="600" height="750" loading="lazy">
@@ -807,7 +809,7 @@
                         <li>Harmonização dos centros energéticos (chakras)</li>
                     </ul>
                     
-                    <!-- MARCAÇÃO E-E-A-T -->
+                    <!-- MARCAÇÃO E-E-A-T (Qualidade do Conteúdo e EEAT - Diretriz 3.3) -->
                     <div style="margin: 2rem 0; padding: 1rem; border-left: 3px solid var(--c-brand); background: rgba(0,0,0,0.2);">
                         <p style="font-size: 0.85rem; color: #ccc; margin: 0;">
                             <strong>E-E-A-T:</strong> Conteúdo técnico e metodológico desenvolvido e validado por profissional certificada. <br>
@@ -815,7 +817,7 @@
                         </p>
                     </div>
 
-                    <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre a Saúde Energética Integrativa com a Loiara." target="_blank" class="btn btn-brand">Agendar Avaliação Energética</a>
+                    <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre a Saúde Energética Integrativa com a Loiara." target="_blank" rel="noopener noreferrer" class="btn btn-brand">Agendar Avaliação Energética</a>
                 </div>
             </div>
         </section>
@@ -950,24 +952,26 @@
                         <li><a href="#terapias">Terapias Energéticas</a></li>
                     </ul>
                 </div>
-                <div>
+                <!-- Tag Semântica <address> (Diretriz 6: Domínio Local) -->
+                <address style="font-style: normal;">
                     <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--c-brand);">Contato e Localização</h3>
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 0.5rem;">📍 Rua Cel. Massot, 519</li>
                         <li style="margin-bottom: 0.5rem;">Cristal, Porto Alegre - RS</li>
-                        <li>📞 <a href="https://wa.me/5551980600845" target="_blank" title="Falar com o Revygore via WhatsApp">Agendar via WhatsApp (51) 98060-0845</a></li>
+                        <li>📞 <a href="https://wa.me/5551980600845" target="_blank" rel="noopener noreferrer" title="Falar com o Revygore via WhatsApp">Agendar via WhatsApp (51) 98060-0845</a></li>
                     </ul>
-                </div>
+                </address>
             </div>
-            <!-- CONTROLE DE SNIPPET -->
-            <div class="footer-bottom" data-nosnippet>
-                &copy; 2026 Revygore Essencial. Desenvolvido com foco em SEO AIO, Performance e Experiência Premium.
+            <!-- CONTROLE DE SNIPPET (Diretriz 1.2) -->
+            <div class="footer-bottom" style="text-align: center; border-top: 1px solid #444; padding-top: 2rem;" data-nosnippet>
+                &copy; 2026 Revygore Essencial.<br>
+                Desenvolvido por <a href="https://prapdigital.com.br/" target="_blank" rel="noopener noreferrer">Prap Digital</a>.
             </div>
         </div>
     </footer>
 
     <!-- BOTÃO WHATSAPP FLUTUANTE -->
-    <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar um horário no Revygore Essencial." class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
+    <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar um horário no Revygore Essencial." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M20.52 3.449A11.96 11.96 0 0012.022 0C5.405 0 .025 5.38.022 12.002c-.002 2.115.548 4.181 1.593 6.002L.012 24l6.13-1.61c1.761.969 3.743 1.48 5.875 1.481h.005c6.615 0 11.996-5.381 11.999-12.004a11.95 11.95 0 00-3.501-8.418zM12.025 21.84h-.004c-1.788 0-3.541-.48-5.077-1.39l-.364-.216-3.774.99.99-3.68-.237-.378A9.972 9.972 0 012.05 12.003c.002-5.503 4.484-9.982 9.982-9.982 2.666.001 5.172 1.042 7.054 2.925a9.957 9.957 0 012.92 7.058c-.003 5.503-4.484 9.982-9.982 9.984zm5.48-7.494c-.3-.15-1.774-.876-2.048-.976-.274-.101-.475-.15-.675.151-.2.301-.775.976-.95 1.176-.175.201-.35.226-.65.076-1.52-.754-2.73-1.464-3.794-3.265-.2-.338.2-.315.485-.884.098-.201.05-.376-.025-.526-.075-.15-.675-1.626-.925-2.226-.24-.578-.487-.5-.675-.51h-.575c-.2 0-.525.075-.8.376-.275.3-1.05 1.026-1.05 2.5 0 1.475 1.075 2.9 1.225 3.101.15.201 2.115 3.227 5.12 4.526 2.016.87 2.628.905 3.094.854.527-.058 1.774-.726 2.024-1.426.25-.7.25-1.301.175-1.426-.075-.126-.275-.201-.575-.351z"/>
         </svg>
