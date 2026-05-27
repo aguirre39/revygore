@@ -8,14 +8,14 @@
     <!-- SEO BÁSICO E METADADOS AVANÇADOS           -->
     <!-- ========================================== -->
     <title>Revygore Essencial | Pilates, Yoga e Terapias em Porto Alegre</title>
-    <meta name="description" content="Estúdio premium de Pilates, Yoga Alquímico, Treinamento Funcional e Terapias Energéticas no Cristal, Porto Alegre. Transforme seu corpo e mente com a Profa. Loiara.">
+    <meta name="description" content="Estúdio premium focado no cuidado integral: físico, mental, emocional e espiritual. Pilates, Yoga Alquímico e Terapias Energéticas no Cristal, Porto Alegre.">
     <link rel="canonical" href="https://www.revygoreessencial.com.br/">
     <!-- Controle Granular para Snippets e IA -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Revygore Essencial | Movimento Consciente e Transformação Integral">
-    <meta property="og:description" content="Descubra um espaço acolhedor focado em Pilates integrativo, Yoga e terapias vibracionais. Agende seu horário.">
+    <meta property="og:description" content="Descubra um espaço acolhedor focado no cuidado integral: corpo físico, mente, emoções e espírito. Agende seu horário.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80">
     <meta property="og:url" content="https://www.revygoreessencial.com.br/">
     <meta property="og:type" content="website">
@@ -178,34 +178,108 @@
         .bg-sage-light { background-color: #F0F6F2; }
         .bg-sand-light { background-color: #FAF8F5; }
 
-        /* Tabela Semântica AIO / RAG (Otimização para LLMs) */
-        .aio-table-wrapper { width: 100%; overflow-x: auto; margin-top: 0.5rem; margin-bottom: 3rem; border-radius: var(--br-soft); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .aio-table { width: 100%; border-collapse: collapse; background: #fff; min-width: 700px; }
-        .aio-table th, .aio-table td { padding: 1.25rem 1.5rem; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .aio-table th { background-color: var(--c-olive-dark); color: #fff; font-family: var(--f-title); font-size: 1.25rem; font-weight: 600; }
-        .aio-table tr:hover { background-color: var(--c-offwhite); }
-        .aio-table tr:last-child td { border-bottom: none; }
-        .aio-table td { font-size: 0.95rem; color: var(--c-gray-text); }
+        /* ========================================== */
+        /* TABELA PREMIUM AIO / RAG (Otimização Visual e Mobile) */
+        /* ========================================== */
+        .aio-table-wrapper { 
+            width: 100%; 
+            overflow-x: auto; 
+            margin-top: 1rem; 
+            margin-bottom: 4rem; 
+            border-radius: 16px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
+            background: #fff;
+        }
+        /* Customização da Barra de Rolagem (Scrollbar) */
+        .aio-table-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+        .aio-table-wrapper::-webkit-scrollbar-track {
+            background: var(--c-offwhite);
+            border-radius: 0 0 16px 16px;
+        }
+        .aio-table-wrapper::-webkit-scrollbar-thumb {
+            background: var(--c-brand-dark);
+            border-radius: 10px;
+        }
 
-        /* Indicador de Deslize para Mobile (UX) */
+        .aio-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            min-width: 800px; 
+        }
+        
+        /* Cabeçalho Premium com Altura Generosa */
+        .aio-table th { 
+            background-color: var(--c-olive-dark); 
+            color: #EBE5D9; /* Tom de bege muito claro, elegante */
+            font-family: var(--f-title); 
+            font-size: 1.4rem; 
+            font-weight: 500; 
+            letter-spacing: 0.5px;
+            padding: 3rem 2rem; /* Muito respiro vertical simulando a imagem */
+            text-align: left; 
+            border-bottom: none;
+            white-space: nowrap;
+        }
+
+        /* Células e Linhas com Contraste Suave */
+        .aio-table td { 
+            padding: 1.75rem 2rem; 
+            font-size: 0.95rem; 
+            color: var(--c-gray-text);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            vertical-align: middle;
+            line-height: 1.6;
+        }
+        .aio-table td strong {
+            color: var(--c-olive-dark);
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+        .aio-table tr {
+            transition: background-color 0.3s ease;
+        }
+        .aio-table tr:hover td { 
+            background-color: rgba(129, 199, 161, 0.08); /* Hover suave na cor da marca */
+        }
+        .aio-table tr:last-child td { 
+            border-bottom: none; 
+        }
+
+        /* Indicador de Deslize para Mobile (UX) - Premium e Flutuante */
         .swipe-hint {
             display: none;
-            text-align: right;
-            font-size: 0.8rem;
-            color: var(--c-brand-dark);
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: #ffffff;
+            background-color: var(--c-brand-dark);
+            padding: 0.85rem 1.75rem;
+            border-radius: 50px;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            animation: swipeMove 1.5s infinite ease-in-out;
+            margin: 0 auto 2rem auto;
+            width: fit-content;
+            box-shadow: 0 8px 25px rgba(74, 133, 101, 0.35);
+            animation: swipeMovePulse 2.5s infinite ease-in-out;
+            letter-spacing: 0.5px;
         }
-        @keyframes swipeMove {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(8px); }
+        .swipe-hint svg {
+            width: 18px;
+            height: 18px;
+        }
+        @keyframes swipeMovePulse {
+            0%, 100% { transform: translateX(0) scale(1); opacity: 0.95; }
+            50% { transform: translateX(6px) scale(1.02); opacity: 1; }
         }
 
         @media (max-width: 768px) {
             .swipe-hint {
-                display: block;
+                display: flex; /* Exibe a pílula de deslize em telas menores */
             }
+            .aio-table th { padding: 2.25rem 1.5rem; }
+            .aio-table td { padding: 1.5rem; }
         }
 
         /* Marcadores Visuais de Modalidade (01, 02, etc.) */
@@ -275,7 +349,7 @@
             box-shadow: 0 10px 20px rgba(129, 199, 161, 0.4);
         }
 
-        /* GEO/AIO: Parágrafo BLUF (Bottom Line Up Front) - Corrigido para <p> semântico */
+        /* GEO/AIO: Parágrafo BLUF (Bottom Line Up Front) */
         p.bluf-summary {
             background-color: rgba(129, 199, 161, 0.15);
             padding: 1.5rem;
@@ -539,26 +613,30 @@
             <div class="hero-content reveal active">
                 <span class="subtitle-emocional">Movimento Consciente</span>
                 <!-- H1 com total alinhamento semântico com a tag Title (Diretriz 1.2) -->
-                <h1>Revygore Essencial: Pilates, Yoga e Terapias em Porto Alegre.</h1>
-                <p>O nosso estúdio é um portal de autocuidado dedicado à Transformação Integral do seu Corpo, Mente e Energia. Conecte-se com sua força interior através de práticas integrativas exclusivas.</p>
+                <h1>Revygore Essencial: Pilates, Yoga e Terapias Energéticas em Porto Alegre.</h1>
+                <p>O nosso estúdio é um portal de autocuidado dedicado à Transformação Integral. Conecte-se com sua força interior e fortaleça seus quatro pilares fundamentais: o <strong>físico, mental, emocional e espiritual</strong>, através de práticas integrativas exclusivas.</p>
                 <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar minha Avaliação no Revygore." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agendar minha Avaliação</a>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- SOBRE O REVYGORE (Conceito Narrativo) -->
+        <!-- SOBRE O REVYGORE (Conceito Narrativo e Cuidado Integral) -->
         <section class="section bg-white" id="sobre">
             <div class="container grid-2">
                 <div class="text-wrapper reveal">
                     <span class="subtitle-emocional">Nossa Essência</span>
                     <h2>Um campo de cura e presença.</h2>
-                    <p>Movimento consciente, força interior, equilíbrio energético e transformação integral.</p>
-                    <p>No Revygore Essencial, cada prática é desenhada para promover acolhimento, expansão e reconexão. Criamos um espaço seguro onde o corpo encontra sua base, a mente silencia e a energia vital volta a fluir com liberdade.</p>
-                    <p>Nossa missão é guiar você de volta à sua própria potência, nutrindo o bem-estar físico e a serenidade emocional através de práticas profundas e verdadeiras.</p>
+                    
+                    <!-- Destaque BLUF para IA: Cuidado em todas as dimensões -->
+                    <p class="bluf-summary">Nossa verdadeira essência é cuidar de você de forma integral. Compreendemos que o bem-estar real acontece apenas quando nutrimos nossos quatro pilares fundamentais: o corpo <strong>físico</strong>, a <strong>mente</strong>, o aspecto <strong>emocional</strong> e a sua energia <strong>espiritual</strong>.</p>
+                    
+                    <p>No Revygore Essencial, cada prática é desenhada para promover acolhimento, expansão e reconexão. Criamos um espaço seguro e sagrado onde o seu <strong>corpo físico</strong> encontra força e base, a sua <strong>mente</strong> silencia, as suas <strong>emoções</strong> são acolhidas e a sua <strong>energia espiritual</strong> volta a fluir com total liberdade.</p>
+                    
+                    <p>Nossa missão é guiar você de volta à sua própria potência, conduzindo uma transformação profunda e verdadeira através do movimento consciente e de terapias que abraçam todas as dimensões do seu ser.</p>
                 </div>
                 <div class="img-wrapper reveal">
-                    <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&w=800&q=80" alt="Mulher praticando respiração e presença no estúdio" width="600" height="750" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&w=800&q=80" alt="Mulher praticando respiração focada no equilíbrio físico, mental, emocional e espiritual" width="600" height="750" loading="lazy">
                 </div>
             </div>
         </section>
@@ -573,8 +651,11 @@
 
             <!-- TABELA AIO (Estrutura Semântica para RAG - LLMs) -->
             <div class="container reveal">
-                <!-- Indicador visual (Aparece apenas no mobile) -->
-                <div class="swipe-hint">Deslize para o lado para ver mais &rarr;</div>
+                <!-- Indicador visual (Aparece apenas no mobile) - Atualizado Premium -->
+                <div class="swipe-hint">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    Deslize a tabela para ver mais
+                </div>
                 <div class="aio-table-wrapper">
                     <table class="aio-table">
                         <thead>
@@ -639,12 +720,12 @@
                             O Pilates Revygore é uma prática terapêutica e física que une fortalecimento muscular, correção postural e consciência respiratória, focada no bem-estar total do indivíduo.
                         </p>
 
-                        <p>No Revygore Essencial, acreditamos que o movimento é mais do que exercício — é um caminho de reconexão, fortalecimento e transformação.</p>
-                        <p>Nosso Pilates nasce de uma visão integrativa, onde corpo, mente e energia caminham juntos para restaurar equilíbrio, consciência e vitalidade. Cada prática é conduzida como uma experiência de presença, respeitando a individualidade de cada pessoa e fortalecendo não apenas músculos, mas também postura, confiança e estabilidade interior.</p>
-                        <p>Aqui, o Pilates se torna um portal para o reencontro com sua própria força. Cada respiração organiza, cada movimento alinha, cada fortalecimento sustenta uma estrutura mais saudável, consciente e equilibrada.</p>
-                        <p>No Revygore Essencial, cada prática é um convite para desenvolver firmeza, leveza e sustentação, promovendo saúde física e emocional com propósito e verdade. É sobre construir um corpo forte, flexível e alinhado, enquanto se desperta uma conexão mais profunda consigo mesma.</p>
-                        <p>Nosso espaço foi criado para quem busca mais do que atividade física — para quem deseja viver uma jornada de autocuidado, expansão e transformação integral.</p>
-                        <p>Revygore Essencial é um campo de movimento consciente, onde cada prática fortalece sua essência, amplia sua vitalidade e sustenta sua melhor versão.</p>
+                        <!-- TEXTO RESUMIDO DE FORMA PROFISSIONAL E OBJETIVA -->
+                        <p>No Revygore Essencial, o movimento vai além do exercício: é um caminho de reconexão e transformação. Nosso Pilates nasce de uma visão integrativa, onde corpo, mente e energia caminham juntos para restaurar o seu equilíbrio e vitalidade.</p>
+                        
+                        <p>Cada prática é uma experiência de presença que respeita a sua individualidade. Através da respiração consciente e do movimento alinhado, você desenvolve não apenas força muscular e boa postura, mas também confiança e estabilidade interior.</p>
+                        
+                        <p>Nosso espaço foi criado para quem busca mais do que atividade física. É um convite para uma verdadeira jornada de autocuidado, onde você constrói um corpo firme e flexível enquanto desperta uma conexão profunda com a sua própria essência.</p>
                         
                         <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre as aulas de Pilates Integrativo." target="_blank" rel="noopener noreferrer" class="btn btn-brand" style="margin-top: 1rem;">Agendar Pilates</a>
                     </div>
@@ -671,13 +752,9 @@
                             Um método que integra força, funcionalidade e presença para despertar sua potência física, melhorar o equilíbrio metabólico e estruturar uma base protetora para as articulações.
                         </p>
 
-                        <p>No Revygore Essencial, o Treinamento Funcional e de Força vai além do exercício físico — é um chamado para despertar potência, presença e conexão entre corpo, mente e energia.</p>
-                        <p>Acreditamos que fortalecer o corpo é também fortalecer sua estrutura interior. Cada movimento ativa não apenas músculos, mas também sua consciência, sua disciplina e sua capacidade de sustentar a própria caminhada com mais firmeza e propósito.</p>
-                        <p>Nosso método integra força, funcionalidade e presença, promovendo uma jornada de expansão física e energética. Cada prática é conduzida como um reencontro com sua própria potência — um espaço onde você fortalece seu corpo, organiza sua energia e desperta uma versão mais alinhada de si mesma.</p>
-                        <p>No Revygore Essencial, o treino funcional desenvolve mobilidade, equilíbrio, resistência e estabilidade, enquanto o treino de força constrói base, proteção e vitalidade. Juntos, eles formam uma experiência integrativa que fortalece sua estrutura física e também sua sustentação emocional e energética.</p>
-                        <p>Aqui, acreditamos que um corpo fortalecido se torna um canal mais preparado para sustentar propósito, direção e evolução. Treinar é mais do que executar movimentos — é ancorar presença, liberar bloqueios e expandir sua força de dentro para fora.</p>
-                        <p>Cada sessão é um convite para alinhar matéria e essência, despertar sua energia vital e construir uma base sólida para viver com mais consciência, liberdade e poder pessoal.</p>
-                        <p>Revygore Essencial é onde força, movimento e espiritualidade se encontram para fortalecer sua existência em todos os níveis.</p>
+                        <p>Acreditamos que fortalecer o corpo é também fortalecer a sua estrutura interior. No Revygore, o treino funcional desenvolve mobilidade e equilíbrio, enquanto a força constrói base e vitalidade. Cada movimento é pensado para ativar a sua consciência e a capacidade de sustentar sua própria caminhada com firmeza e propósito.</p>
+                        <p>Mais do que executar séries, nosso método é uma jornada de expansão física e energética. É um espaço para liberar bloqueios e expandir sua energia de dentro para fora, tornando o seu corpo um canal forte e preparado para sustentar a sua evolução.</p>
+                        <p>Cada sessão é um convite profundo para alinhar matéria e essência. Revygore Essencial é onde força, movimento e espiritualidade se encontram para fortalecer sua existência em todos os níveis e despertar a versão mais alinhada de si mesma.</p>
                         
                         <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre o Treinamento Funcional e de Força." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1rem;">Agendar Funcional</a>
                     </div>
@@ -704,13 +781,9 @@
                             A união da estrutura do Hatha Yoga, a expansão do Tantra Yoga e o acolhimento da Yoga Terapia para promover força, equilíbrio e cura emocional profunda.
                         </p>
 
-                        <p>No Revygore Essencial, nasceu uma prática única: uma fusão profunda entre Tantra Yoga, Hatha Yoga e Yoga Terapia, desenvolvida para integrar corpo, energia, cura e consciência em uma jornada transformadora.</p>
-                        <p>Este método foi criado para ir além das práticas convencionais, unindo a estrutura e estabilidade do Hatha Yoga, a expansão energética e sensorial do Tantra Yoga, e o acolhimento restaurador da Yoga Terapia. O resultado é uma experiência autoral, integrativa e profundamente consciente, que respeita sua individualidade enquanto promove fortalecimento, equilíbrio e reconexão interior.</p>
-                        <p>Cada prática conduz você a um mergulho em sua própria essência — fortalecendo o corpo, ampliando a percepção energética, liberando tensões físicas e emocionais, e favorecendo estados mais profundos de presença, clareza e alinhamento.</p>
-                        <p>No Revygore Essencial, essa jornada é vivida como um processo de alquimia interior: movimento, respiração, energia e consciência trabalhando juntos para restaurar sua base, despertar sua vitalidade e expandir sua conexão consigo mesma.</p>
-                        <p>Mais do que uma aula, esta prática é um caminho terapêutico e espiritual de transformação, onde o corpo se fortalece, a mente silencia, a energia flui e a essência se revela.</p>
-                        <p>É o encontro entre força e suavidade, estrutura e expansão, cura e despertar.</p>
-                        <p>Revygore Essencial oferece uma experiência singular para quem busca não apenas praticar Yoga, mas viver uma jornada de reconexão profunda, equilíbrio integral e expansão da própria consciência.</p>
+                        <p>No Revygore Essencial, criamos uma prática autoral única: uma fusão profunda entre a estrutura do Hatha Yoga, a expansão energética do Tantra Yoga e o acolhimento restaurador da Yoga Terapia. O resultado é um método que vai além do convencional, respeitando a sua individualidade para promover fortalecimento e reconexão interior.</p>
+                        <p>Cada prática conduz a um mergulho na sua própria essência. Vivenciamos um verdadeiro processo de alquimia interior, onde o movimento, a respiração e a energia trabalham juntos para liberar tensões físicas e emocionais, silenciar a mente e despertar a sua vitalidade.</p>
+                        <p>Mais do que uma aula, é um caminho terapêutico e espiritual de transformação. É o encontro perfeito entre força e suavidade, estrutura e expansão, cura e despertar. Uma experiência singular para quem deseja viver uma jornada de equilíbrio integral e expansão da própria consciência.</p>
                         
                         <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre o Yoga Alquímico." target="_blank" rel="noopener noreferrer" class="btn btn-brand" style="margin-top: 1rem;">Agendar Yoga</a>
                     </div>
@@ -769,6 +842,22 @@
                         <p>Através de um toque cuidadoso e individualizado, a técnica auxilia na liberação de tensões, no alívio de dores e na recuperação dos espaços e movimentos naturais do corpo, muitas vezes comprimidos pela rotina, pelo estresse e pelas sobrecargas do dia a dia.</p>
                         <p>Seja para quem busca aliviar desconfortos físicos, seja para quem deseja um momento de pausa, respiro e acolhimento, a Massagem de Reorganização Corporal proporciona relaxamento profundo, conforto e consciência corporal.</p>
                         <p>Cada atendimento respeita a singularidade de cada corpo, entendendo que equilíbrio e bem-estar acontecem de forma única para cada pessoa.</p>
+
+                        <p><strong>Massagens:</strong></p>
+                        <ul class="premium-list">
+                            <li>Relaxante</li>
+                            <li>Drenagem Linfática</li>
+                            <li>Terapêutica</li>
+                            <li>Facial</li>
+                            <li>Revigorante (2H)</li>
+                            <li>Desportiva (1H45)</li>
+                            <li>Lipedema</li>
+                            <li>Fibromialgia</li>
+                            <li>Reflexologia podal (pés)</li>
+                            <li>Gestantes</li>
+                            <li>Liberação Miofascial</li>
+                            <li>Tratamento para Cefaleia</li>
+                        </ul>
                         
                         <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar uma Massagem de Reorganização Corporal." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1rem;">Agendar Massagem</a>
                     </div>
@@ -941,7 +1030,7 @@
             <div class="footer-grid">
                 <div>
                     <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #fff;">REVYGORE ESSENCIAL</h3>
-                    <p>Movimento consciente, força interior, equilíbrio energético e transformação integral.</p>
+                    <p>Movimento consciente e cuidado de forma integral: nutrindo o seu corpo físico, mental, emocional e espiritual.</p>
                 </div>
                 <div>
                     <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--c-brand);">Nossas Experiências</h3>
