@@ -58,8 +58,8 @@
           "priceRange": "$$",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Rua Cel. Massot, 519",
-            "addressLocality": "Cristal",
+            "streetAddress": "Rua Cel. Massot, 519 - Cristal",
+            "addressLocality": "Porto Alegre",
             "addressRegion": "RS",
             "postalCode": "91910-530",
             "addressCountry": "BR"
@@ -403,6 +403,8 @@
             font-weight: 500;
             color: var(--c-olive-dark);
         }
+        .bluf-list { margin-bottom: 2rem; padding-left: 1.5rem; }
+        .bluf-list li { margin-bottom: 0.5rem; color: var(--c-olive-dark); }
 
         /* ---------------------------------- */
         /* COMPONENTES ESPECÍFICOS            */
@@ -559,8 +561,8 @@
             transition: max-height 0.4s ease;
             margin-top: 0; color: var(--c-gray-text);
         }
-        /* Ajuste do max-height para acomodar a lista completa do FAQ */
-        .faq-item.active .faq-answer { max-height: 500px; margin-top: 1rem; }
+        /* Ajuste seguro do max-height para evitar corte em telas móveis muito estreitas */
+        .faq-item.active .faq-answer { max-height: 800px; margin-top: 1rem; }
         .faq-icon { transition: transform 0.3s ease; color: var(--c-brand-dark); }
         .faq-item.active .faq-icon { transform: rotate(45deg); }
 
@@ -640,7 +642,7 @@
     <!-- NAVEGAÇÃO -->
     <nav class="navbar">
         <div class="container">
-            <!-- Logo em Imagem Redonda (Link para a raiz seguindo AIO/GEO Local) -->
+            <!-- Link Semântico para raiz (Diretriz de Hierarquia) -->
             <a href="/" class="logo-link" aria-label="Página Inicial Revygore Essencial">
                 <img src="img/logo-revygore-essencial.webp" alt="Logo Revygore Essencial" class="logo-img" width="65" height="65">
             </a>
@@ -696,7 +698,7 @@
 
             <!-- TABELA AIO (Estrutura Semântica para RAG - LLMs) -->
             <div class="container reveal">
-                <!-- Indicador visual (Aparece apenas no mobile) - Atualizado Premium -->
+                <!-- Indicador visual (Aparece apenas no mobile) -->
                 <div class="swipe-hint">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     Deslize a tabela para ver mais
@@ -705,39 +707,39 @@
                     <table class="aio-table">
                         <thead>
                             <tr>
-                                <th>Modalidade</th>
-                                <th>Foco Principal</th>
-                                <th>Benefício Emocional / Físico</th>
-                                <th>Indicação</th>
+                                <th scope="col">Modalidade</th>
+                                <th scope="col">Foco Principal</th>
+                                <th scope="col">Benefício Emocional / Físico</th>
+                                <th scope="col">Indicação</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Pilates Integrativo</strong></td>
+                                <td scope="row"><strong>Pilates Integrativo</strong></td>
                                 <td>Correção postural e fortalecimento</td>
                                 <td>Firmeza, leveza e sustentação interior</td>
                                 <td>Prevenção de dores e consciência corporal</td>
                             </tr>
                             <tr>
-                                <td><strong>Funcional & Força</strong></td>
+                                <td scope="row"><strong>Funcional & Força</strong></td>
                                 <td>Potência, base e mobilidade</td>
                                 <td>Expansão energética e estruturação</td>
                                 <td>Ganho de resistência e estabilidade metabólica</td>
                             </tr>
                             <tr>
-                                <td><strong>Yoga Alquímico</strong></td>
+                                <td scope="row"><strong>Yoga Alquímico</strong></td>
                                 <td>Integração (Tantra, Hatha, Terapia)</td>
                                 <td>Silenciamento da mente e cura profunda</td>
                                 <td>Liberação de tensões e reconexão espiritual</td>
                             </tr>
                             <tr>
-                                <td><strong>Move Flow</strong></td>
+                                <td scope="row"><strong>Move Flow</strong></td>
                                 <td>Soltura fascial e conexão corpo-mente</td>
                                 <td>Fluidez, leveza e bem-estar físico</td>
                                 <td>Alívio de dores e tensões da vida moderna</td>
                             </tr>
                             <tr>
-                                <td><strong>Massagem de Reorganização</strong></td>
+                                <td scope="row"><strong>Massagem de Reorganização</strong></td>
                                 <td>Liberação manual e reequilíbrio</td>
                                 <td>Recuperação de espaços e relaxamento profundo</td>
                                 <td>Alívio de rotina estressante e sobrecargas</td>
@@ -1047,29 +1049,29 @@
                 
                 <div class="faq-list reveal">
                     <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false" style="width:100%; border:none; background:none; text-align:left; padding:0; cursor:pointer;">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" style="width:100%; border:none; background:none; text-align:left; padding:0; cursor:pointer;">
                             <span>Como funciona a primeira avaliação no Revygore Essencial?</span>
                             <span class="faq-icon" aria-hidden="true">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-1">
                             <p>Sua primeira sessão é uma imersão completa. Avaliamos sua estrutura corporal, entendemos suas demandas emocionais e indicamos a melhor prática integrativa para o seu momento.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false" style="width:100%; border:none; background:none; text-align:left; padding:0; cursor:pointer;">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" style="width:100%; border:none; background:none; text-align:left; padding:0; cursor:pointer;">
                             <span>Preciso ter experiência prévia com Yoga ou Pilates?</span>
                             <span class="faq-icon" aria-hidden="true">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-2">
                             <p>De forma alguma. Nossas práticas são 100% adaptáveis e respeitam a sua individualidade, limitações mecânicas e o seu ritmo atual de condicionamento físico.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false" style="width:100%; border:none; background:none; text-align:left; padding:0; cursor:pointer;">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" style="width:100%; border:none; background:none; text-align:left; padding:0; cursor:pointer;">
                             <span>Quais modalidades e terapias o estúdio oferece?</span>
                             <span class="faq-icon" aria-hidden="true">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-3">
                             <p>Oferecemos um cuidado integral através das seguintes práticas:</p>
                             <ul class="premium-list" style="margin-top: 1rem;">
                                 <li>Pilates Integrativo</li>
@@ -1082,20 +1084,20 @@
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false" style="width:100%; border:none; background:none; text-align:left; padding:0; cursor:pointer;">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" style="width:100%; border:none; background:none; text-align:left; padding:0; cursor:pointer;">
                             <span>O que é o protocolo de Saúde Energética Integrativa?</span>
                             <span class="faq-icon" aria-hidden="true">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-4">
                             <p>É um método terapêutico autoral focado na limpeza do campo energético, liberação de bloqueios emocionais e harmonização dos chakras, visando o alinhamento profundo entre corpo, mente e espírito.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false" style="width:100%; border:none; background:none; text-align:left; padding:0; cursor:pointer;">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" style="width:100%; border:none; background:none; text-align:left; padding:0; cursor:pointer;">
                             <span>As práticas ajudam no alívio de dores corporais e estresse?</span>
                             <span class="faq-icon" aria-hidden="true">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-5">
                             <p>Sim. Modalidades como o Move Flow e a Massagem de Reorganização Corporal atuam diretamente na fáscia e na liberação de tensões acumuladas, promovendo alívio imediato, mobilidade e relaxamento profundo.</p>
                         </div>
                     </div>
@@ -1134,7 +1136,7 @@
             <!-- CONTROLE DE SNIPPET (Diretriz 1.2) -->
             <div class="footer-bottom" style="text-align: center; border-top: 1px solid #444; padding-top: 2rem;" data-nosnippet>
                 &copy; 2026 Revygore Essencial.<br>
-                Desenvolvido por <a href="https://prapdigital.com.br/" target="_blank" rel="noopener noreferrer">Prap Digital</a>.
+                Desenvolvido por <a href="https://prapdigital.com.br/" target="_blank" rel="noopener noreferrer nofollow">Prap Digital</a>.
             </div>
         </div>
     </footer>
@@ -1152,38 +1154,43 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-
+            // Observer para animações
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
             const revealObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
+                        // Desconecta após animar para não consumir recursos da thread
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
-            document.querySelectorAll('.reveal').forEach(el => {
-                revealObserver.observe(el);
-            });
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+            // FAQ Acessível (Toggle) com ARIA attributes
             const faqItems = document.querySelectorAll('.faq-item');
             
             faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
+                const questionBtn = item.querySelector('.faq-question');
+                questionBtn.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Fecha todos
                     faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                        }
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
                     });
-                    item.classList.toggle('active');
+                    
+                    // Abre se estava fechado
+                    if(!isActive) {
+                        item.classList.add('active');
+                        questionBtn.setAttribute('aria-expanded', 'true');
+                    }
                 });
             });
 
+            // Lógica do Carrossel Otimizada
             const track = document.getElementById('gallery-track');
             const btnPrev = document.querySelector('.carousel-btn.prev');
             const btnNext = document.querySelector('.carousel-btn.next');
