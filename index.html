@@ -14,6 +14,27 @@
     <meta name="author" content="Loiara Pinheiro">
     <link rel="canonical" href="https://www.revygoreessencial.com.br/">
     
+    <link rel="icon" type="image/svg+xml" href="/img/favicon-revygore-essencial.svg">
+    <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-revygore-essencial.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon-revygore-essencial.png">
+    
+    <!-- Ferramenta de Análise (Google Analytics 4) - Checklist SEO -->
+    <!-- IMPORTANTE: Descomente e adicione seu ID da métrica -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEU_ID_AQUI"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SEU_ID_AQUI');
+    </script>
+    -->
+
+    <!-- Meta Tags GEO / Local SEO -->
+    <meta name="geo.region" content="BR-RS">
+    <meta name="geo.placename" content="Porto Alegre">
+
     <!-- Controle Granular para Snippets e IA (AIO) -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
@@ -21,6 +42,7 @@
     <meta property="og:title" content="Revygore Essencial | Movimento Consciente e Transformação Integral">
     <meta property="og:description" content="Descubra um espaço acolhedor focado no cuidado integral: corpo físico, mente, emoções e espírito.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image:alt" content="Ambiente sereno do Estúdio Revygore Essencial em Porto Alegre">
     <meta property="og:url" content="https://www.revygoreessencial.com.br/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
@@ -187,6 +209,16 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Utilitário de Acessibilidade: Esconde visualmente, mas mantém para leitores de tela */
+        .visually-hidden {
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
         /* Tipografia Utilitária */
         h1, h2, h3, h4, .font-title { font-family: var(--f-title); color: var(--c-olive-dark); font-weight: 600; line-height: 1.2; }
         h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
@@ -223,107 +255,150 @@
         .bg-sand-light { background-color: #FAF8F5; }
 
         /* ========================================== */
-        /* TABELA PREMIUM AIO / RAG (Otimização Visual e Mobile) */
+        /* AIO MODALITIES TABLE/CARDS (Mobile-First)  */
         /* ========================================== */
-        .aio-table-wrapper { 
-            width: 100%; 
-            overflow-x: auto; 
-            margin-top: 1rem; 
-            margin-bottom: 4rem; 
-            border-radius: 16px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
-            background: #fff;
-        }
-        /* Customização da Barra de Rolagem (Scrollbar) */
-        .aio-table-wrapper::-webkit-scrollbar {
-            height: 8px;
-        }
-        .aio-table-wrapper::-webkit-scrollbar-track {
-            background: var(--c-offwhite);
-            border-radius: 0 0 16px 16px;
-        }
-        .aio-table-wrapper::-webkit-scrollbar-thumb {
-            background: var(--c-brand-dark);
-            border-radius: 10px;
+        /* Wrapper para o componente */
+        .modalities-table-container {
+            margin: 2rem 0 4rem 0;
         }
 
-        .aio-table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            min-width: 800px; 
-        }
-        
-        /* Cabeçalho Premium com Altura Generosa */
-        .aio-table th { 
-            background-color: var(--c-olive-dark); 
-            color: #EBE5D9; /* Tom de bege muito claro, elegante */
-            font-family: var(--f-title); 
-            font-size: 1.4rem; 
-            font-weight: 500; 
-            letter-spacing: 0.5px;
-            padding: 3rem 2rem; /* Muito respiro vertical simulando a imagem */
-            text-align: left; 
-            border-bottom: none;
-            white-space: nowrap;
+        /* A tabela em si, age como um container de cards no mobile */
+        .modalities-table-aio {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
         }
 
-        /* Células e Linhas com Contraste Suave */
-        .aio-table td { 
-            padding: 1.75rem 2rem; 
-            font-size: 0.95rem; 
-            color: var(--c-gray-text);
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-            vertical-align: middle;
-            line-height: 1.6;
-        }
-        .aio-table td strong {
-            color: var(--c-olive-dark);
-            font-size: 1.05rem;
-            font-weight: 700;
-        }
-        .aio-table tr {
-            transition: background-color 0.3s ease;
-        }
-        .aio-table tr:hover td { 
-            background-color: rgba(129, 199, 161, 0.08); /* Hover suave na cor da marca */
-        }
-        .aio-table tr:last-child td { 
-            border-bottom: none; 
-        }
-
-        /* Indicador de Deslize para Mobile (UX) - Premium e Flutuante */
-        .swipe-hint {
+        /* Esconde o cabeçalho da tabela no mobile, pois os labels estarão nos cards */
+        .modalities-table-aio thead {
             display: none;
-            align-items: center;
-            justify-content: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
-            color: #ffffff;
-            background-color: var(--c-brand-dark);
-            padding: 0.85rem 1.75rem;
-            border-radius: 50px;
-            font-weight: 600;
-            margin: 0 auto 2rem auto;
-            width: fit-content;
-            box-shadow: 0 8px 25px rgba(74, 133, 101, 0.35);
-            animation: swipeMovePulse 2.5s infinite ease-in-out;
-            letter-spacing: 0.5px;
-        }
-        .swipe-hint svg {
-            width: 18px;
-            height: 18px;
-        }
-        @keyframes swipeMovePulse {
-            0%, 100% { transform: translateX(0) scale(1); opacity: 0.95; }
-            50% { transform: translateX(6px) scale(1.02); opacity: 1; }
         }
 
-        @media (max-width: 768px) {
-            .swipe-hint {
-                display: flex; /* Exibe a pílula de deslize em telas menores */
+        /* Cada linha (tr) se torna um card no mobile */
+        .modalities-table-aio tr {
+            display: block;
+            background-color: #ffffff;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.06);
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .modalities-table-aio tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(74, 133, 101, 0.12);
+        }
+
+        /* Cada célula (td) se torna um bloco dentro do card */
+        .modalities-table-aio td {
+            display: block;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .modalities-table-aio tr td:last-child {
+            border-bottom: none;
+        }
+
+        /* O pseudo-elemento ::before exibe o label do `data-label` no mobile */
+        .modalities-table-aio td::before {
+            content: attr(data-label);
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--c-gray-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Estilo especial para o nome da modalidade, que é o título do card */
+        .modalities-table-aio td[data-label="Modalidade"] {
+            font-family: var(--f-title);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--c-olive-dark);
+            padding-top: 0;
+        }
+
+        .modalities-table-aio td[data-label="Modalidade"]::before {
+            display: none; /* Não precisamos do label "Modalidade:" */
+        }
+
+        /* Estilo do texto dentro das células */
+        .modalities-table-aio td {
+            font-size: 1rem;
+            color: var(--c-gray-text);
+            line-height: 1.5;
+        }
+
+        /* --- Desktop View (a partir de 992px) --- */
+        @media (min-width: 992px) {
+            /* Restaura o layout de tabela no desktop */
+            .modalities-table-aio {
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+                background: #fff;
             }
-            .aio-table th { padding: 2.25rem 1.5rem; }
-            .aio-table td { padding: 1.5rem; }
+
+            .modalities-table-aio thead {
+                display: table-header-group; /* Mostra o cabeçalho */
+            }
+
+            .modalities-table-aio th {
+                background-color: var(--c-olive-dark);
+                color: var(--c-bege);
+                font-family: var(--f-title);
+                font-size: 1.25rem;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                padding: 1.75rem 2rem;
+                text-align: left;
+                white-space: nowrap;
+            }
+
+            .modalities-table-aio tr {
+                display: table-row; /* Restaura o display de linha */
+                /* Reseta os estilos de card */
+                margin-bottom: 0;
+                border-radius: 0;
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                background-color: transparent;
+            }
+            
+            .modalities-table-aio tr:hover {
+                background-color: rgba(129, 199, 161, 0.08);
+                transform: none;
+                box-shadow: none;
+            }
+
+            .modalities-table-aio td {
+                display: table-cell; /* Restaura o display de célula */
+                padding: 1.75rem 2rem;
+                font-size: 0.95rem;
+                border-bottom: 1px solid rgba(0,0,0,0.06);
+                vertical-align: middle;
+            }
+            
+            .modalities-table-aio tr:last-child td {
+                border-bottom: none;
+            }
+
+            .modalities-table-aio td::before {
+                display: none; /* Esconde os labels do mobile */
+            }
+            
+            .modalities-table-aio td[data-label="Modalidade"] {
+                font-family: var(--f-body);
+                font-size: 1.05rem;
+                font-weight: 700;
+                color: var(--c-olive-dark);
+            }
         }
 
         /* Marcadores Visuais de Modalidade (01, 02, etc.) */
@@ -689,22 +764,21 @@
         </section>
 
         <!-- SEÇÃO MESTRE: MODALIDADES -->
-        <section id="modalidades" style="background-color: var(--c-offwhite);">
+        <section id="modalidades" style="background-color: var(--c-offwhite); padding-bottom: 4rem;">
             
             <div class="container text-center reveal" style="padding-top: 5rem; padding-bottom: 2rem;">
                 <span class="subtitle-emocional">Nossas Práticas</span>
                 <h2>Experiências Revygore</h2>
+                <p style="max-width: 650px; margin-left: auto; margin-right: auto; margin-top: 1rem;">Um resumo de nossas práticas integrativas, desenhadas para nutrir corpo, mente e espírito.</p>
             </div>
 
-            <!-- TABELA AIO (Estrutura Semântica para RAG - LLMs) -->
+            <!-- TABELA/CARDS AIO (Estrutura Semântica para RAG/LLMs e UX Premium) -->
             <div class="container reveal">
-                <!-- Indicador visual (Aparece apenas no mobile) -->
-                <div class="swipe-hint">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                    Deslize a tabela para ver mais
-                </div>
-                <div class="aio-table-wrapper">
-                    <table class="aio-table">
+                <div class="modalities-table-container">
+                    <table class="modalities-table-aio" aria-label="Tabela de Modalidades Revygore Essencial">
+                        <caption class="visually-hidden">
+                            Tabela comparativa das modalidades oferecidas pelo estúdio Revygore Essencial, incluindo Pilates, Funcional, Yoga, Move Flow e Massagem. A tabela detalha o foco principal, o benefício emocional e físico, e a indicação de cada prática.
+                        </caption>
                         <thead>
                             <tr>
                                 <th scope="col">Modalidade</th>
@@ -715,34 +789,34 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td scope="row"><strong>Pilates Integrativo</strong></td>
-                                <td>Correção postural e fortalecimento</td>
-                                <td>Firmeza, leveza e sustentação interior</td>
-                                <td>Prevenção de dores e consciência corporal</td>
+                                <td data-label="Modalidade">Pilates Integrativo</td>
+                                <td data-label="Foco Principal">Correção postural e fortalecimento</td>
+                                <td data-label="Benefício Emocional / Físico">Firmeza, leveza e sustentação interior</td>
+                                <td data-label="Indicação">Prevenção de dores e consciência corporal</td>
                             </tr>
                             <tr>
-                                <td scope="row"><strong>Funcional & Força</strong></td>
-                                <td>Potência, base e mobilidade</td>
-                                <td>Expansão energética e estruturação</td>
-                                <td>Ganho de resistência e estabilidade metabólica</td>
+                                <td data-label="Modalidade">Funcional & Força</td>
+                                <td data-label="Foco Principal">Potência, base e mobilidade</td>
+                                <td data-label="Benefício Emocional / Físico">Expansão energética e estruturação</td>
+                                <td data-label="Indicação">Ganho de resistência e estabilidade metabólica</td>
                             </tr>
                             <tr>
-                                <td scope="row"><strong>Yoga Alquímico</strong></td>
-                                <td>Integração (Tantra, Hatha, Terapia)</td>
-                                <td>Silenciamento da mente e cura profunda</td>
-                                <td>Liberação de tensões e reconexão espiritual</td>
+                                <td data-label="Modalidade">Yoga Alquímico</td>
+                                <td data-label="Foco Principal">Integração (Tantra, Hatha, Terapia)</td>
+                                <td data-label="Benefício Emocional / Físico">Silenciamento da mente e cura profunda</td>
+                                <td data-label="Indicação">Liberação de tensões e reconexão espiritual</td>
                             </tr>
                             <tr>
-                                <td scope="row"><strong>Move Flow</strong></td>
-                                <td>Soltura fascial e conexão corpo-mente</td>
-                                <td>Fluidez, leveza e bem-estar físico</td>
-                                <td>Alívio de dores e tensões da vida moderna</td>
+                                <td data-label="Modalidade">Move Flow</td>
+                                <td data-label="Foco Principal">Soltura fascial e conexão corpo-mente</td>
+                                <td data-label="Benefício Emocional / Físico">Fluidez, leveza e bem-estar físico</td>
+                                <td data-label="Indicação">Alívio de dores e tensões da vida moderna</td>
                             </tr>
                             <tr>
-                                <td scope="row"><strong>Massagem de Reorganização</strong></td>
-                                <td>Liberação manual e reequilíbrio</td>
-                                <td>Recuperação de espaços e relaxamento profundo</td>
-                                <td>Alívio de rotina estressante e sobrecargas</td>
+                                <td data-label="Modalidade">Massagem de Reorganização</td>
+                                <td data-label="Foco Principal">Liberação manual e reequilíbrio</td>
+                                <td data-label="Benefício Emocional / Físico">Recuperação de espaços e relaxamento profundo</td>
+                                <td data-label="Indicação">Alívio de rotina estressante e sobrecargas</td>
                             </tr>
                         </tbody>
                     </table>
@@ -777,7 +851,7 @@
                         <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre as aulas de Pilates Integrativo." target="_blank" rel="noopener noreferrer" class="btn btn-brand" style="margin-top: 1rem;">Agendar Pilates</a>
                     </div>
                     <div class="img-wrapper reveal">
-                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Prática de Pilates Integrativo nos equipamentos modernos" width="600" height="750" loading="lazy">
+                        <img src="img/pilates-integrativo-mobilidade-e-estabilidade-revygore-essencial-porto-alegre.webp" alt="Prática de Pilates Integrativo na Revygore Essencial em Porto Alegre com foco em mobilidade, estabilidade, alongamento e consciência corporal" title="Pilates Integrativo e movimento consciente na Revygore Essencial" loading="lazy" width="900" height="1200">
                     </div>
                 </div>
             </article>
@@ -806,7 +880,7 @@
                         <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre o Treinamento Funcional e de Força." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1rem;">Agendar Funcional</a>
                     </div>
                     <div class="img-wrapper reveal">
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Aluna realizando treino de força e funcional" width="600" height="750" loading="lazy">
+                        <img src="img/treinamento-forca-movimento-consciente-revygore-essencial-porto-alegre.webp" alt="Prática de força, movimento e consciência corporal na Revygore Essencial em Porto Alegre com exercício funcional de estabilidade e mobilidade" title="Treinamento funcional de força e consciência corporal na Revygore Essencial" loading="lazy" width="800" height="1000">
                     </div>
                 </div>
             </article>
@@ -835,8 +909,7 @@
                         <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre o Yoga Alquímico." target="_blank" rel="noopener noreferrer" class="btn btn-brand" style="margin-top: 1rem;">Agendar Yoga</a>
                     </div>
                     <div class="img-wrapper reveal">
-                        <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=800&q=80" alt="Postura de Yoga Alquímico focado na respiração" width="600" height="750" loading="lazy">
-                    </div>
+                        <img src="img/yoga-alquimico-integrativo-equilibrio-energetico-revygore-essencial-porto-alegre.webp" alt="Prática de Yoga Alquímico Integrativo na Revygore Essencial em Porto Alegre com foco em força, equilíbrio, cura emocional e reconexão interior" title="Yoga Alquímico Integrativo e movimento consciente na Revygore Essencial" loading="lazy" width="800" height="1000">
                 </div>
             </article>
 
@@ -867,7 +940,7 @@
                         <a href="https://wa.me/5551980600845?text=Olá! Gostaria de saber mais sobre a prática de Move Flow." target="_blank" rel="noopener noreferrer" class="btn btn-brand" style="margin-top: 1rem;">Agendar Move Flow</a>
                     </div>
                     <div class="img-wrapper reveal">
-                        <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=800&q=80" alt="Prática de Move Flow com bolinhas e soltura fascial" width="600" height="750" loading="lazy">
+                        <img src="img/move-flow-movimento-consciente-revygore-essencial-porto-alegre.webp" alt="Praticantes de Move Flow no estúdio Revygore Essencial em Porto Alegre realizando exercícios de mobilidade, consciência corporal e bem-estar integrativo" title="Move Flow e movimento consciente na Revygore Essencial em Porto Alegre" loading="lazy" width="800" height="800">
                     </div>
                 </div>
             </article>
@@ -883,13 +956,12 @@
                         </div>
 
                         <span class="subtitle-emocional">Liberação e Respiro</span>
-                        <h2>Massagem de Reorganização Corporal</h2>
-                        
-                        <p>Mais do que uma massagem convencional, este é um trabalho terapêutico voltado ao reequilíbrio e à reorganização do corpo como um todo.</p>
-                        <p>Através de um toque cuidadoso e individualizado, a técnica auxilia na liberação de tensões, no alívio de dores e na recuperação dos espaços e movimentos naturais do corpo, muitas vezes comprimidos pela rotina, pelo estresse e pelas sobrecargas do dia a dia.</p>
-                        <p>Seja para quem busca aliviar desconfortos físicos, seja para quem deseja um momento de pausa, respiro e acolhimento, a Massagem de Reorganização Corporal proporciona relaxamento profundo, conforto e consciência corporal.</p>
-                        <p>Cada atendimento respeita a singularidade de cada corpo, entendendo que equilíbrio e bem-estar acontecem de forma única para cada pessoa.</p>
+                        <h2>Reorganização Corporal Integrativa</h2>
 
+                        <p>A <strong>Reorganização Corporal Integrativa</strong> vai além de uma massagem convencional. Ela é um <em>trabalho terapêutico</em> voltado ao reequilíbrio e à reorganização do corpo como um todo.</p>
+                        <p>Através de um <strong>toque cuidadoso e individualizado</strong>, a técnica auxilia na liberação de tensões, no <strong>alívio de dores</strong> e na recuperação dos espaços e movimentos naturais do corpo, muitas vezes comprimidos pela rotina, pelo estresse e pelas sobrecargas do dia a dia.</p>
+                        <p>Seja para quem busca aliviar desconfortos físicos, ou busca por um momento de pausa, respiro e acolhimento, a <strong>Massagem de Reorganização Corporal Integrativa</strong> proporciona relaxamento profundo, conforto e <strong>consciência corporal</strong>.</p>
+                        <p>Cada corpo carrega suas próprias singularidades, tensões e histórias. Por isso, o atendimento acontece de forma individualizada, através de um <em>toque inteligente e sensível</em> que auxilia na <strong>reorganização corporal</strong>, restaurando equilíbrio e <strong>bem-estar físico e interno</strong>.</p>
                         <p><strong>Massagens:</strong></p>
                         <ul class="premium-list">
                             <li>Relaxante</li>
@@ -909,7 +981,7 @@
                         <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar uma Massagem de Reorganização Corporal." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1rem;">Agendar Massagem</a>
                     </div>
                     <div class="img-wrapper reveal">
-                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Terapia manual e massagem de reorganização corporal" width="600" height="750" loading="lazy">
+                        <img src="img/massagem-reorganizacao-corporal-integrativa-revygore-essencial.webp" alt="Massagem de Reorganização Corporal Integrativa na Revygore Essencial" width="800" height="1000" loading="lazy">
                     </div>
                 </div>
             </article>
@@ -928,28 +1000,45 @@
                     </div>
 
                     <span class="subtitle-emocional" style="color: #E0E0E0;">Protocolo Exclusivo</span>
-                    <h2>Saúde Energética Integrativa</h2>
-                    <p class="font-title" style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--c-brand);">Olá, eu sou Loiara Pinheiro ✨</p>
+                    <h2>Saúde Energética Integrativa ✨🌿</h2>
+                    <p class="font-title" style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--c-brand);">Olá, eu sou Loiara Pinheiro</p>
                     
                     <p>Profissional de Educação Física (CREF 027807-G/RS) e Terapeuta Energética Integrativa, atuando também como reikiana nível 3, magista terapêutica e leitora de campo vibracional.</p>
-                    <p>Criadora do protocolo autoral Saúde Energética Integrativa, um método desenvolvido para atuar de forma profunda no equilíbrio energético, emocional, mental e espiritual do ser humano.</p>
+                    <p>Um processo terapêutico complementar autoral que atua no equilíbrio entre corpo, mente, emoções e energia, auxiliando tanto quem busca mais saúde e bem-estar, quanto quem deseja aprofundar sua conexão espiritual e desbloquear caminhos internos.</p>
                     
-                    <p>Este protocolo atua diretamente em:</p>
-                    
-                    <ul class="premium-list" style="color: var(--c-bege);">
-                        <li>Limpeza e harmonização do campo energético</li>
-                        <li>Liberação de bloqueios emocionais e vibracionais</li>
-                        <li>Equilíbrio mental e emocional</li>
-                        <li>Redução de tensões, sobrecargas e cansaço energético</li>
-                        <li>Fortalecimento da conexão espiritual e da energia vital</li>
-                        <li>Harmonização dos centros energéticos (chakras)</li>
+                    <h3 style="font-size: 1.2rem; color: var(--c-brand); margin-top: 1.5rem; margin-bottom: 1rem;">💚 Para sua saúde física, emocional e mental:</h3>
+                    <ul class="premium-list" style="color: var(--c-bege); margin-bottom: 1.5rem;">
+                        <li>Alívio de dores musculoesqueléticas e tensões acumuladas</li>
+                        <li>Relaxamento profundo do sistema nervoso</li>
+                        <li>Mais foco, clareza mental e organização emocional</li>
+                        <li>Sensação de leveza e melhora do fluxo corporal</li>
+                        <li>Apoio ao equilíbrio físico, emocional e energético</li>
+                        <li>Estímulo aos processos naturais de regeneração e bem-estar</li>
+                    </ul>
+
+                    <h3 style="font-size: 1.2rem; color: var(--c-brand); margin-top: 1.5rem; margin-bottom: 1rem;">✨ Para expansão de consciência e cura energética:</h3>
+                    <ul class="premium-list" style="color: var(--c-bege); margin-bottom: 1.5rem;">
+                        <li>Limpeza de emoções e padrões que bloqueiam sua caminhada</li>
+                        <li>Desbloqueio energético e alinhamento espiritual</li>
+                        <li>Auxílio para compreender ciclos, caminhos e direcionamentos da vida</li>
+                        <li>Reconexão com sua essência e fortalecimento energético</li>
+                        <li>Harmonização do campo vibracional e espiritual</li>
+                    </ul>
+
+                    <h3 style="font-size: 1.2rem; color: var(--c-brand); margin-top: 1.5rem; margin-bottom: 1rem;">✨ Técnicas Utilizadas:</h3>
+                    <ul class="premium-list" style="color: var(--c-bege); margin-bottom: 1.5rem;">
+                        <li>Limpeza Energética Profunda</li>
+                        <li>Reiki Xamânico</li>
+                        <li>Leitura de Campo Vibracional</li>
+                        <li>Abertura dos Registros Akáshicos</li>
+                        <li>Limpeza de Magias e Resgate Energético</li>
                     </ul>
                     
                     <!-- MARCAÇÃO E-E-A-T (Qualidade do Conteúdo e EEAT - Diretriz 3.3) -->
                     <div style="margin: 2rem 0; padding: 1rem; border-left: 3px solid var(--c-brand); background: rgba(0,0,0,0.2);">
                         <p style="font-size: 0.85rem; color: #ccc; margin: 0;">
-                            <strong>E-E-A-T:</strong> Método e práticas desenvolvidas sob validação técnica de profissional de saúde certificada (CREF 027807-G/RS). <br>
-                            <span style="color: var(--c-brand);">Última atualização técnica: <time datetime="2026-05-25">Maio de 2026</time></span>
+                            <strong>E-E-A-T:</strong> Processo terapêutico desenvolvido e aplicado sob validação técnica de profissional de saúde certificada (CREF 027807-G/RS). <br>
+                            <span style="color: var(--c-brand);">Última revisão técnica: <time datetime="2026-05-29">Maio de 2026</time></span>
                         </p>
                     </div>
 
