@@ -1,0 +1,23 @@
+/* Estilos comuns para as páginas pilares de serviço */
+.pilar-hero {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    background-color: var(--c-offwhite);
+    text-align: center;
+}
+.pilar-hero h1 {
+    margin-bottom: 1rem;
+}
+.pilar-content {
+    padding: 4rem 0;
+}
+.pilar-back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--c-brand-dark);
+    text-decoration: none;
+    font-weight: 600;
+}
+.pilar-back-link:hover {
+    text-decoration: underline;
+}

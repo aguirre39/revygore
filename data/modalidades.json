@@ -1,0 +1,32 @@
+[
+    {
+        "nome": "Pilates Integrativo",
+        "foco": "Correção postural e fortalecimento",
+        "beneficio": "Firmeza, leveza e sustentação interior",
+        "indicacao": "Prevenção de dores e consciência corporal"
+    },
+    {
+        "nome": "Funcional & Força",
+        "foco": "Potência, base e mobilidade",
+        "beneficio": "Expansão energética e estruturação",
+        "indicacao": "Ganho de resistência e estabilidade metabólica"
+    },
+    {
+        "nome": "Yoga Alquímico",
+        "foco": "Integração (Tantra, Hatha, Terapia)",
+        "beneficio": "Silenciamento da mente e cura profunda",
+        "indicacao": "Liberação de tensões e reconexão espiritual"
+    },
+    {
+        "nome": "Move Flow",
+        "foco": "Soltura fascial e conexão corpo-mente",
+        "beneficio": "Fluidez, leveza e bem-estar físico",
+        "indicacao": "Alívio de dores e tensões da vida moderna"
+    },
+    {
+        "nome": "Massagem de Reorganização",
+        "foco": "Liberação manual e reequilíbrio",
+        "beneficio": "Recuperação de espaços e relaxamento profundo",
+        "indicacao": "Alívio de rotina estressante e sobrecargas"
+    }
+]

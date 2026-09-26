@@ -1,0 +1,132 @@
+.modalities-table-container {
+    margin: 2rem 0 4rem 0;
+}
+
+.modalities-table-aio {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.modalities-table-aio thead {
+    display: none;
+}
+
+.modalities-table-aio tr {
+    display: block;
+    background-color: #ffffff;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modalities-table-aio tr:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(74, 133, 101, 0.12);
+}
+
+.modalities-table-aio td {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.modalities-table-aio tr td:last-child {
+    border-bottom: none;
+}
+
+.modalities-table-aio td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--c-gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.modalities-table-aio td[data-label="Modalidade"] {
+    font-family: var(--f-title);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--c-olive-dark);
+    padding-top: 0;
+}
+
+.modalities-table-aio td[data-label="Modalidade"]::before {
+    display: none;
+}
+
+.modalities-table-aio td {
+    font-size: 1rem;
+    color: var(--c-gray-text);
+    line-height: 1.5;
+}
+
+@media (min-width: 992px) {
+    .modalities-table-aio {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        background: #fff;
+    }
+
+    .modalities-table-aio thead {
+        display: table-header-group;
+    }
+
+    .modalities-table-aio th {
+        background-color: var(--c-olive-dark);
+        color: var(--c-bege);
+        font-family: var(--f-title);
+        font-size: 1.25rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        padding: 1.75rem 2rem;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .modalities-table-aio tr {
+        display: table-row;
+        margin-bottom: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        background-color: transparent;
+    }
+    
+    .modalities-table-aio tr:hover {
+        background-color: rgba(129, 199, 161, 0.08);
+        transform: none;
+        box-shadow: none;
+    }
+
+    .modalities-table-aio td {
+        display: table-cell;
+        padding: 1.75rem 2rem;
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        vertical-align: middle;
+    }
+    
+    .modalities-table-aio tr:last-child td {
+        border-bottom: none;
+    }
+
+    .modalities-table-aio td::before {
+        display: none;
+    }
+    
+    .modalities-table-aio td[data-label="Modalidade"] {
+        font-family: var(--f-body);
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--c-olive-dark);
+    }
+}

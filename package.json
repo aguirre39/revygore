@@ -1,0 +1,11 @@
+{
+  "name": "revygore-essencial",
+  "version": "1.0.0",
+  "description": "Site Institucional Revygore Essencial",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "author": "Loiara Pinheiro",
+  "license": "ISC"
+}

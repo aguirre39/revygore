@@ -1,0 +1,18 @@
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+.text-center { text-align: center; }
+
+.bg-white { background-color: #ffffff; }
+.bg-cream { background-color: #F7F5F0; }
+.bg-sage-light { background-color: #F0F6F2; }
+.bg-sand-light { background-color: #FAF8F5; }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }

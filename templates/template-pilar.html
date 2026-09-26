@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} em Porto Alegre | Revygore Essencial</title>
+    <meta name="description" content="{{description}}">
+    <meta name="author" content="Loiara Pinheiro">
+    <link rel="canonical" href="https://www.revygoreessencial.com.br/{{slug}}/">
+    
+    <meta property="og:title" content="{{title}} | Revygore Essencial">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:image" content="{{og_image}}">
+    <meta property="og:url" content="https://www.revygoreessencial.com.br/{{slug}}/">
+    <meta property="og:type" content="website">
+    
+    <!-- INCLUDE: head-meta-base -->
+    <!-- ESTILOS (exemplo) -->
+    <link rel="stylesheet" href="../assets/css/base/variables.css">
+    <link rel="stylesheet" href="../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../assets/css/layout/grid.css">
+    <link rel="stylesheet" href="../assets/css/layout/navbar-footer.css">
+    <link rel="stylesheet" href="../assets/css/components/buttons.css">
+    <link rel="stylesheet" href="../assets/css/pages/pilar-servico.css">
+    <!-- END INCLUDE -->
+
+    <!-- SCHEMA JSON-LD (WebPage + Service) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "{{title}}",
+          "provider": {
+            "@id": "https://www.revygoreessencial.com.br/#business"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Porto Alegre"
+          },
+          "description": "{{description}}"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.revygoreessencial.com.br/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "{{title}}",
+              "item": "https://www.revygoreessencial.com.br/{{slug}}/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- INCLUDE: navbar -->
+    <!-- END INCLUDE -->
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-container" style="padding-top: 100px; background-color: var(--c-offwhite);">
+        <div class="container">
+            <nav aria-label="Breadcrumb">
+                <ol style="list-style: none; display: flex; gap: 0.5rem; font-size: 0.85rem; color: var(--c-gray-light); margin: 0; padding: 0;">
+                    <li><a href="/" style="color: var(--c-brand-dark); text-decoration: none;">Home</a></li>
+                    <li>></li>
+                    <li aria-current="page">{{title}}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- HERO DA PÁGINA PILAR -->
+    <header class="pilar-hero" style="background-color: var(--c-offwhite); padding: 4rem 0;">
+        <div class="container reveal active text-center">
+            <span class="subtitle-emocional" style="color: var(--c-brand-dark); font-weight: 600;">Prática Integrativa em Porto Alegre</span>
+            <h1 style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--c-olive-dark); font-family: var(--f-title);">{{title}}</h1>
+            <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem; color: var(--c-gray-text);">{{bluf_summary}}</p>
+            <a href="https://wa.me/5551980600845?text=Olá! Gostaria de agendar {{title}}." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 2rem;">Agendar Avaliação</a>
+        </div>
+    </header>
+
+    <main class="pilar-content section bg-white">
+        <!-- CONTEÚDO PROFUNDO (Topical Authority) -->
+        <div class="container grid-2" style="margin-bottom: 4rem;">
+            <div class="text-wrapper reveal">
+                <h2 style="font-family: var(--f-title); color: var(--c-olive-dark);">Como o {{title}} atua na dor e no equilíbrio?</h2>
+                <p>Nesta seção, entra o conteúdo denso do serviço. O Google avalia a profundidade (Topical Authority) pelo nível de detalhamento sem enrolação.</p>
+                <p><strong>Para que serve:</strong> Expandir sobre os tratamentos, prevenção de lesões, ganho de mobilidade e relaxamento.</p>
+                
+                <h3 style="color: var(--c-brand-dark); margin-top: 1.5rem;">Principais Benefícios:</h3>
+                <ul class="premium-list" style="margin-bottom: 1.5rem; margin-top: 1rem; color: var(--c-gray-text);">
+                    <li>Benefício focado em dor 1</li>
+                    <li>Benefício estrutural 2</li>
+                    <li>Benefício emocional 3</li>
+                </ul>
+
+                <p>O acompanhamento é feito de forma individualizada, respeitando a biomecânica e o momento de cada aluno, integrando a visão do Método 4F (Físico, Mente, Emoção e Energia).</p>
+            </div>
+            
+            <div class="img-wrapper reveal" style="box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-radius: var(--br-soft); overflow: hidden;">
+                <img src="{{og_image}}" alt="{{title}} na Revygore Essencial - Cuidado da Dor" title="{{title}}" loading="lazy" width="800" height="1000" style="width: 100%; height: auto; display: block;">
+            </div>
+        </div>
+
+        <!-- FAQ ESPECÍFICO DO SERVIÇO -->
+        <div class="container reveal" style="max-width: 800px; margin: 4rem auto;">
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <h2 style="font-family: var(--f-title); color: var(--c-olive-dark);">Dúvidas Frequentes sobre {{title}}</h2>
+            </div>
+            <div class="faq-list">
+                <!-- Inserir FAQ específico da modalidade aqui (Perguntas curtas) -->
+                <!-- As que exigirem resposta longa devem linkar para artigos do blog. -->
+            </div>
+        </div>
+    </main>
+
+    <!-- HUB CONTENT: ARTIGOS RELACIONADOS (CLUSTER) -->
+    <section class="section bg-cream" id="artigos-relacionados">
+        <div class="container reveal">
+            <div class="flex-between" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <div>
+                    <span class="subtitle-emocional" style="color: var(--c-brand-dark);">Aprofunde seu conhecimento</span>
+                    <h2 style="font-family: var(--f-title); color: var(--c-olive-dark);">Artigos sobre {{title}}</h2>
+                </div>
+                <a href="/blog/categoria/{{slug}}/" class="btn btn-outline" style="border: 2px solid var(--c-brand-dark); color: var(--c-brand-dark); padding: 0.5rem 1.5rem; border-radius: var(--br-soft); text-decoration: none; font-weight: 600;">Ver todos os artigos &rarr;</a>
+            </div>
+
+            <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- INCLUDE: partials/related-articles.html -->
+                <!-- Placeholder visual (Topical Cluster Links) -->
+                <article class="article-card" style="background: #fff; border-radius: var(--br-soft); overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div class="article-thumb" style="height: 200px; background: #eee;">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Exemplo" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--c-brand-dark); font-weight: 700;">{{title}}</span>
+                        <h3 style="font-size: 1.25rem; margin: 0.5rem 0; font-family: var(--f-title); color: var(--c-olive-dark);">[Exemplo] Como prevenir dores com {{title}}</h3>
+                        <p style="font-size: 0.9rem; color: var(--c-gray-text); line-height: 1.6; margin-bottom: 1rem;">Resposta direta BLUF do artigo. Um resumo claro de 1 ou 2 frases feito especificamente para IA generativa e Snippets.</p>
+                        <a href="/blog/categoria/{{slug}}/exemplo-artigo" style="font-size: 0.9rem; color: var(--c-brand-dark); text-decoration: underline; font-weight: 600;">Ler artigo completo &rarr;</a>
+                    </div>
+                </article>
+                <!-- Fim do placeholder -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL DA PÁGINA PILAR -->
+    <section class="section text-center" style="background-color: var(--c-olive-dark); color: #fff;">
+        <div class="container reveal">
+            <h2 style="color: var(--c-brand); margin-bottom: 1rem; font-family: var(--f-title);">Pronto para transformar sua relação com o corpo?</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem; color: #e0e0e0; line-height: 1.6;">Agende sua avaliação e descubra como o {{title}} pode tratar suas dores e devolver sua vitalidade de forma integral.</p>
+            <a href="https://wa.me/5551980600845" target="_blank" rel="noopener noreferrer" class="btn btn-brand">Agendar Minha Sessão</a>
+        </div>
+    </section>
+
+    <!-- INCLUDE: footer -->
+    <!-- END INCLUDE -->
+
+    <!-- INCLUDE: whatsapp-float -->
+    <!-- END INCLUDE -->
+
+</body>
+</html>

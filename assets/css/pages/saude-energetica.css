@@ -1,0 +1,136 @@
+/* ============================================================
+   saude-energetica.css
+   Estilos específicos da página Saúde Energética Integrativa
+   ============================================================ */
+
+/* --- Grid dos 4 Pilares (Corpo, Emoções, Mente, Energia) --- */
+.pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.pilar-card {
+    background: linear-gradient(135deg, #f9f6f0, #fff);
+    border: 1px solid #e8e0d5;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pilar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+.pilar-card .pilar-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+.pilar-card h3 {
+    color: var(--c-olive-dark);
+    font-family: var(--f-title);
+    margin-bottom: 0.5rem;
+}
+.pilar-card p {
+    color: var(--c-gray-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* --- Cards de Serviços --- */
+.servico-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    border-left: 4px solid var(--c-brand-dark);
+    margin-bottom: 2rem;
+}
+.servico-card h3 {
+    font-family: var(--f-title);
+    color: var(--c-olive-dark);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+.servico-card ul {
+    margin: 0.75rem 0 0.75rem 1.25rem;
+    color: var(--c-gray-text);
+    line-height: 1.8;
+}
+.servico-card .tag {
+    display: inline-block;
+    background: var(--c-brand-dark);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+/* --- Seção Biografia da Loiara --- */
+.bio-section {
+    background: linear-gradient(135deg, #f4f0ea, #fff8f0);
+    border-radius: 20px;
+    padding: 3rem;
+}
+
+/* --- Grid de Diferenciais --- */
+.diferencial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.diferencial-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+.diferencial-item .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* --- Badges dos 9 Pilares da Leitura Vibracional --- */
+.pilares-9 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+.pilares-9 span {
+    background: var(--c-offwhite, #f9f6f0);
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
+    color: var(--c-olive-dark);
+    font-weight: 600;
+}
+
+/* --- Responsividade Mobile --- */
+@media (max-width: 768px) {
+    .bio-section {
+        padding: 2rem 1.25rem;
+    }
+    .servico-card {
+        padding: 1.75rem 1.25rem;
+    }
+    .pilares-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .pilares-grid {
+        grid-template-columns: 1fr;
+    }
+}

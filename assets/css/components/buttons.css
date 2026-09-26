@@ -1,0 +1,40 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-family: var(--f-body);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: var(--trans-default);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--c-olive-dark);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.btn-primary:hover {
+    background-color: #1A1C14;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(26, 28, 20, 0.3);
+}
+
+.btn-brand {
+    background-color: var(--c-brand);
+    color: var(--c-brand-text);
+    font-weight: 800;
+}
+
+.btn-brand:hover {
+    background-color: var(--c-brand-hover);
+    color: var(--c-brand-text);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(129, 199, 161, 0.4);
+}

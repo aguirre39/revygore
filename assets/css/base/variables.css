@@ -1,0 +1,21 @@
+:root {
+    --c-offwhite: #F9F8F6;
+    --c-bege: #EBE5D9;
+    --c-olive: #5A5E4A;
+    --c-olive-dark: #323528;
+    --c-brand: #81C7A1;
+    --c-brand-hover: #6EB58E;
+    --c-brand-dark: #4A8565;
+    --c-brand-text: #1A1C14;
+    --c-gray-text: #333333;
+    --c-gray-light: #707070;
+    --c-whatsapp: #128C7E;
+    
+    --f-title: 'Cormorant Garamond', serif;
+    --f-body: 'Montserrat', sans-serif;
+    
+    --container-w: 1200px;
+    --section-py: 6rem;
+    --br-soft: 12px;
+    --trans-default: 0.3s ease-in-out;
+}

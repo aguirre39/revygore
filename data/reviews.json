@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "Láis Moretto Costa Bürgel",
+        "estrelas": 5,
+        "texto": "\"Treinar com a Profa. Loiara mudou a minha vida! Me sinto cada vez mais forte, não somente fisicamente, mas emocionalmente também...\"",
+        "origem": "Avaliação no Google",
+        "inicial": "L"
+    },
+    {
+        "nome": "Cris G",
+        "estrelas": 5,
+        "texto": "\"Loiara é muito competente e dedicada! Elabora os exercícios de acordo com as necessidades e características de cada aluno...\"",
+        "origem": "Local Guide",
+        "inicial": "C"
+    },
+    {
+        "nome": "Bibi Bopsin",
+        "estrelas": 5,
+        "texto": "\"A Loiara é um pessoa incrível! Ela cuida e pensa no bem estar de cada aluno! Com certeza treinar com ela vai trazer uma evolução...\"",
+        "origem": "Local Guide",
+        "inicial": "B"
+    }
+]
