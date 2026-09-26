@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.revygoreessencial.com.br/sitemap.xml
